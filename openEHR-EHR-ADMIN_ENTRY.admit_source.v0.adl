@@ -12,11 +12,15 @@ language
             author = <
                 ["name"] = <"?">
             >
+            other_details = <
+            >
         >
         ["sv"] = <
             language = <[ISO_639-1::sv]>
             author = <
                 ["name"] = <"?">
+            >
+            other_details = <
             >
         >
     >
@@ -50,14 +54,14 @@ definition
     ADMIN_ENTRY[at0000] matches {
         data matches {
             ITEM_TREE[at0001] matches {
-                items cardinality matches {0..*; unordered} matches {
+                items existence matches {0..1} cardinality matches {0..*; unordered} matches {
                     ELEMENT[at0002] occurrences matches {0..1} matches {
-                        value matches {
+                        value existence matches {0..1} matches {
                             DV_TEXT matches {*}
                         }
                     }
                     ELEMENT[at0003] occurrences matches {0..1} matches {
-                        value matches {
+                        value existence matches {0..1} matches {
                             DV_TEXT matches {*}
                         }
                     }
