@@ -1,0 +1,1070 @@
+{
+  "@type" : "TEMPLATE",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2005-10-10",
+      "name" : "Thomas Beale",
+      "organisation" : "Ocean Informatics, UK",
+      "email" : "thomas.beale@oceaninformatics.com"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "0"
+    },
+    "copyright" : "© openEHR Foundation",
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : {
+      "author" : "aom14 model importer"
+    },
+    "otherDetails" : { },
+    "details" : {
+      "ar-sy" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ar-sy"
+        },
+        "purpose" : "تسجيل المقابلة على هيئة ملاحظة تقدم الحالة",
+        "keywords" : [ "التقدم", "ملاحظة", "المقابلة" ],
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "es-ar" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es-ar"
+        },
+        "purpose" : "Registrar los detalles documentales de una única interacción, contacto o evento de cuidado entre un sujeto de cuidados y uno o más proveedores de uno o más servicios de salud. Esta interacción puede ser presencial o remota.",
+        "keywords" : [ "encuentro", "contacto", "visita", "evento de cuidados", "consulta" ],
+        "use" : "Utilícese como un contendor de nivel de documento para el registro de una única interacción, contacto o evento de cuidados entre un sujeto de cuidados y uno o mas proveedores de cuidados de la salud.\r\nEl contacto puede ser cara a cara, o por vía telefónicao de cualquier otro medio electrónico. La modalidad puede ser representada, si asi se requiere, por medio del atributo modo de la COMPOSITION.\r\nEl componente principal de Secciones o Contenido se ha mantenido deliberadamente libre de restricciones. Esto permite que se incluya en la plantilla cualquier Sección (SECTION) o Asiento (ENTRY) apropiado al propósito clínico.\r\nAún cuando se encuentra libre de restricciones en cuanto al contenido clínico, la especificación del COMPOSITION.Encounter agreva valor significativo al permitir la consulta explícita de todos los encuentros conteidos en una historia clínica.\r\nEl componente de Contexto contiene un slot opcional \"Extensión\"\"que puede ser utilizado en el diseño de una plantilla para:\r\n-agregar información opcional de contexto, tal como información sobre el episodio, o\r\n-permitir la armonización o alineamiento con otros formalismos de modelado tales como FHIR o CIMI, como puede ser la representación explícita de participantes que son generalmente manejados por el Modelo de Referencia en un arquetipo openEHR.\r\nSon ejemplos típicos una visita a consultorio, una observación de enfermería o una consulta de telemedicina.",
+        "misuse" : "No debe ser utilizado para registrar los detalles de la totalidad de un episodio de cuidado\r\nNo debe ser utilizado para almacenar información sumaria persistente de un paciente, tale como una lista de problemas o un resumen de medicamentos.\r\nNo debe ser utilizado para representar el informe de un servicio diagnóstico, tal como un estudio de imágenes o una pruena de laboratorio.\r\nNo debe ser utilizado para representar el recurso FHIR del mismo nombre ya que existe una diapridad de alcance y propósito.",
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "purpose" : "To record the document level details of a single interaction, contact or care event between a subject of care and healthcare provider(s) for the provision of healthcare service(s). This can be either a face-to-face or remote interaction.",
+        "keywords" : [ "encounter", "contact", "visit", "care event" ],
+        "use" : "Use as a generic document-level container for recording details of a single interaction, contact or care event between a subject of care and healthcare provider(s). \r\nThe contact may be face-to-face, via telephone or another electronic medium. Modality can be captured, if required, via the reference model COMPOSITION/mode attribute.\r\n\r\nThe main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. \r\n\r\nEven though unconstrained for clinical content, specification of COMPOSITION.Encounter provides significant value by allowing for explicit querying of all Encounters within a patient record.\r\n\r\nThe Context component contains an optional 'Extension' SLOT that can be used in template design to:\r\n- add optional contextual information, such as episode information; or\r\n- allow for harmonisation or alignment with other model formalisms such as FHIR or CIMI, such as explicit representation of participants that are usually managed by the openEHR Reference Model in an openEHR archetype.\r\n\r\nTypical examples are a clinic visit, a nursing observation or a telemedicine consultation.",
+        "misuse" : "Not to be used to record details about an entire episode of care.\r\n\r\nNot to be used to carry persistent, summarised patient information, such as a problem list or medication summary.\r\n\r\nNot to be used to represent the report of a diagnostic service, such as imaging or laboratory testing.\r\n\r\nNot to be used to represent the FHIR resource of the same name - there is a mismatch scope and intent.",
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "ko" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ko"
+        },
+        "purpose" : "외래기록, 경과기록, 간호기록과 일반적인 노트 등과 같은 환자를 대면한 후 작성하는 기록",
+        "keywords" : [ "*경과(ko)", "*노트(ko)", "*외래(ko)" ],
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "pt-br" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "pt-br"
+        },
+        "purpose" : "Registrar os detalhes de uma interação, contato ou episódio de cuidado para a provisão de serviços de saúde entre um sujeito do cuidado e um profissional de saúde. Pode se referir tanto a uma interação presencial quanto à distância.",
+        "keywords" : [ "encontro", "contato", "visita", "episódio de cuidado" ],
+        "use" : "Usar como um documento genérico para registrar detalhes de uma interação simples, contato ou episódio de atenção à saúde entre um sujeito do cuidado e profissional(is) de saúde.\r\nO contato pode ser presencial, via telefone ou outro meio eletrônico. A modalidade pode ser identificada, se necessário, através do modelo de referência COMPOSITION/mode attribute.\r\n\r\nO componente main Sections/Content foi deixado deliberadamente sem restrições. Isto permitirá que ele seja populado com qualquer arquétipo SECTION ou ENTRY apropriado para o propósito clínico em um template.\r\n\r\nEmbora sem restrições para conteúdo clínico, especificação de COMPOSITION, Encounter oferece importante valor por permitir pesquisa de todos os Encontros num prontuário do paciente. \r\n\r\nO componente Contexto contem um SLOT 'Extensão' opcional que pode ser usado no design do template para:\r\n- adicionar informação contextual opcional, como informação do episódio; ou\r\n- permitir a harmonização ou alinhamento com outros modelos ou formalismos como FHIR ou CIMI, como uma representação explícita de participantes que normalmente são gerenciados pelo Modelo de Referência openEHR num arquétipo openEHR.\r\n\r\nExemplos típicos são visita a uma clínica, observação de enfermagem ou uma consulta de telemedicina.",
+        "misuse" : "Não deve ser utilizado para registrar detalhes de um episódio de cuidado completo.\r\n\r\nNão deve ser utilizado para guardar informações persistentes, resumidas de um paciente, como uma lista de problemas ou resumo de medicamentos.\r\n\r\nNão deve ser utilizado para representar o relato de um serviço diagnóstico como exames laboratoriais ou de imagem.\r\n\r\nNão deve ser utilizado para representar recurso FHIR do mesmo nome - há uma incompatibilidade de objetivo e intenção.",
+        "originalResourceUri" : { }
+      },
+      "es" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es"
+        },
+        "purpose" : "Registrar, a nivel de documento, una única interacción, contacto o evento de cuidado, entre un sujeto de cuidado (paciente) y un proveedor de servicios de salud (profesional médico, de enfermería, etc.). Puede ser una interacción cara a cara o remota.",
+        "keywords" : [ "encuentro", "contacto", "visita", "evento de cuidado" ],
+        "use" : "Se debe usar como una definición de documento genérico para registrar información de una única interacción o contacto con un proveedor de salud. Esta definición no especifica la estructura interna de secciones y entradas. Dicha especificación debería hacerse mediante especializaciones del arquetipo o mediante plantillas operativas (Operational Templates - OPT).",
+        "misuse" : "No se debe utilizar para registrar información de un episodio de salud entero.\r\n\r\nNo debe contener información persistente o resúmenes, como lista de problemas o medicación.\r\n\r\nNo se debe usar para registrar resultados de laboratorio o imagenología.\r\n",
+        "originalResourceUri" : { }
+      },
+      "fi" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "fi"
+        },
+        "purpose" : "*To record the document level details of a single interaction, contact or care event between a subject of care and healthcare provider(s) for the provision of healthcare service(s). This can be either a face-to-face or remote interaction.(en)",
+        "keywords" : [ "*encounter(en)", "*contact(en)", "*visit(en)", "*care event(en)" ],
+        "use" : "*Use as a generic document-level container for recording details of a single interaction, contact or care event between a subject of care and healthcare provider(s). \r\nThe contact may be face-to-face, via telephone or another electronic medium. Modality can be captured, if required, via the reference model COMPOSITION/mode attribute.\r\n\r\nThe main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. \r\n\r\nEven though unconstrained for clinical content, specification of COMPOSITION.Encounter provides significant value by allowing for explicit querying of all Encounters within a patient record.\r\n\r\nThe Context component contains an optional 'Extension' SLOT that can be used in template design to:\r\n- add optional contextual information, such as episode information; or\r\n- allow for harmonisation or alignment with other model formalisms such as FHIR or CIMI, such as explicit representation of participants that are usually managed by the openEHR Reference Model in an openEHR archetype.\r\n\r\nTypical examples are a clinic visit, a nursing observation or a telemedicine consultation.(en)",
+        "misuse" : "*Not to be used to record details about an entire episode of care.\r\n\r\nNot to be used to carry persistent, summarised patient information, such as a problem list or medication summary.\r\n\r\nNot to be used to represent the report of a diagnostic service, such as imaging or laboratory testing.\r\n\r\nNot to be used to represent the FHIR resource of the same name - there is a mismatch scope and intent.(en)",
+        "copyright" : "*© openEHR Foundation(en)",
+        "originalResourceUri" : { }
+      },
+      "sv" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "sv"
+        },
+        "purpose" : "*To record the document level details of a single interaction, contact or care event between a subject of care and healthcare provider(s) for the provision of healthcare service(s). This can be either a face-to-face or remote interaction.(en)",
+        "keywords" : [ "*encounter(en)", "*contact(en)", "*visit(en)", "*care event(en)" ],
+        "use" : "*Use as a generic document-level container for recording details of a single interaction, contact or care event between a subject of care and healthcare provider(s). \r\nThe contact may be face-to-face, via telephone or another electronic medium. Modality can be captured, if required, via the reference model COMPOSITION/mode attribute.\r\n\r\nThe main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. \r\n\r\nEven though unconstrained for clinical content, specification of COMPOSITION.Encounter provides significant value by allowing for explicit querying of all Encounters within a patient record.\r\n\r\nThe Context component contains an optional 'Extension' SLOT that can be used in template design to:\r\n- add optional contextual information, such as episode information; or\r\n- allow for harmonisation or alignment with other model formalisms such as FHIR or CIMI, such as explicit representation of participants that are usually managed by the openEHR Reference Model in an openEHR archetype.\r\n\r\nTypical examples are a clinic visit, a nursing observation or a telemedicine consultation.(en)",
+        "misuse" : "*Not to be used to record details about an entire episode of care.\r\n\r\nNot to be used to carry persistent, summarised patient information, such as a problem list or medication summary.\r\n\r\nNot to be used to represent the report of a diagnostic service, such as imaging or laboratory testing.\r\n\r\nNot to be used to represent the FHIR resource of the same name - there is a mismatch scope and intent.(en)",
+        "copyright" : "*© openEHR Foundation(en)",
+        "originalResourceUri" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.encounter.v2",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.encounter.v2"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "occurrences" : "1..1",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "existence" : "1..1",
+              "multiple" : true,
+              "cardinality" : {
+                "@type" : "CARDINALITY",
+                "interval" : "0..*",
+                "ordered" : false,
+                "unique" : false
+              },
+              "children" : [ {
+                "@type" : "ARCHETYPE_SLOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002",
+                "includes" : [ {
+                  "@type" : "ASSERTION",
+                  "stringExpression" : "archetype_id/value matches {/.*/}",
+                  "expression" : {
+                    "@type" : "BINARY_OPERATOR",
+                    "type" : "BOOLEAN",
+                    "operator" : "matches",
+                    "leftOperand" : {
+                      "@type" : "MODEL_REFERENCE",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Attribute",
+                      "path" : "archetype_id/value"
+                    },
+                    "rightOperand" : {
+                      "@type" : "CONSTRAINT",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Constraint",
+                      "item" : {
+                        "@type" : "C_STRING",
+                        "constraint" : [ "/.*/" ]
+                      }
+                    },
+                    "precedenceOverriden" : false
+                  },
+                  "variables" : [ ]
+                } ],
+                "excludes" : [ ],
+                "closed" : false
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002.1",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-composition_state-001.v0"
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002.2",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-viewid-001.v0"
+              }, {
+                "@type" : "C_ARCHETYPE_ROOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002.3",
+                "attributes" : [ ],
+                "attributeTuples" : [ ],
+                "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-encounterid-001.v0"
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "SECTION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-arrival_information-001.v0"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ar-sy" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        }
+      },
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encounter",
+          "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Extension",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.",
+          "comment" : "e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents."
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Extension",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.",
+          "comment" : "e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents."
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Extension",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.",
+          "comment" : "e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents."
+        }
+      },
+      "es-ar" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para representar el contexto local o para alineamiento con otros modelos de referencia y formalismos.",
+          "comment" : "Ej.: Información local del departamento hospitalario o metadatos adicionales para alineamiento con los equivalentes en FHIR o CIMI."
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para representar el contexto local o para alineamiento con otros modelos de referencia y formalismos.",
+          "comment" : "Ej.: Información local del departamento hospitalario o metadatos adicionales para alineamiento con los equivalentes en FHIR o CIMI."
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para representar el contexto local o para alineamiento con otros modelos de referencia y formalismos.",
+          "comment" : "Ej.: Información local del departamento hospitalario o metadatos adicionales para alineamiento con los equivalentes en FHIR o CIMI."
+        }
+      },
+      "ko" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "*Extension(en)",
+          "description" : "*Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        }
+      },
+      "pt-br" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Extensão",
+          "description" : "Informações adicionais necessárias para identificar contexto local ou alinhar com outros formalismos/modelos de referência.",
+          "comment" : "Por exemplo: informação departamental local de hospital ou metadados adicionais para alinhar com equivalentes FHIR ou CIMI."
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Extensão",
+          "description" : "Informações adicionais necessárias para identificar contexto local ou alinhar com outros formalismos/modelos de referência.",
+          "comment" : "Por exemplo: informação departamental local de hospital ou metadados adicionais para alinhar com equivalentes FHIR ou CIMI."
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Extensão",
+          "description" : "Informações adicionais necessárias para identificar contexto local ou alinhar com outros formalismos/modelos de referência.",
+          "comment" : "Por exemplo: informação departamental local de hospital ou metadados adicionais para alinhar com equivalentes FHIR ou CIMI."
+        }
+      },
+      "es" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para capturar el contexto local o alinear con otros modelos de referencia o formalismos.",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para capturar el contexto local o alinear con otros modelos de referencia o formalismos.",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Extensión",
+          "description" : "Información adicional requerida para capturar el contexto local o alinear con otros modelos de referencia o formalismos.",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        }
+      },
+      "fi" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encounter",
+          "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Tarkenne",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Tarkenne",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Tarkenne",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        }
+      },
+      "sv" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Vårdtillfälle",
+          "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        },
+        "at0002.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.1",
+          "text" : "Tilläggsinformation",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.2" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.2",
+          "text" : "Tilläggsinformation",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        },
+        "at0002.3" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0002.3",
+          "text" : "Tilläggsinformation",
+          "description" : "Additional information required to capture local context or to align with other reference models/formalisms.(en)",
+          "comment" : "*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)"
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "rmName" : "openehr",
+  "rmRelease" : "1.0.2",
+  "generated" : true,
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.composition_state.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-composition_state-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Composition state",
+            "description" : "unknown"
+          }
+        },
+        "fi" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Komposition tila",
+            "description" : "*unknown(en)"
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Skapandeläge",
+            "description" : "*unknown(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fi"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.viewid.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-viewid-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "fi" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Näkymän tiedot",
+            "description" : "unknown"
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Granska info",
+            "description" : "unknown"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "View info",
+            "description" : "unknown"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.encounterid.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-encounterid-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "fi" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Encounter reference",
+            "description" : "unknown"
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Referenshändelse",
+            "description" : "unknown"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Encounter reference",
+            "description" : "unknown"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-SECTION.arrival_information.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-SECTION.ovl-arrival_information-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "SECTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "ADMIN_ENTRY",
+          "occurrences" : "0..*",
+          "nodeId" : "at0.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-ADMIN_ENTRY.ovl-admit_source-001.v0"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "fi" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Tulotiedot",
+            "description" : "*"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Arrival information",
+            "description" : "*"
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ankomstinfo",
+            "description" : "*"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "en"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-ADMIN_ENTRY.admit_source.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-ADMIN_ENTRY.ovl-admit_source-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "ADMIN_ENTRY",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Admit source",
+            "description" : "unknown"
+          }
+        },
+        "fi" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Mistä tuli",
+            "description" : "*unknown(en)"
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Kommer ifrån",
+            "description" : "*unknown(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fi"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    } ]
+  } ],
+  "templateId" : "LocalizationTest",
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "fi"
+    },
+    "author" : {
+      "name" : "Kalle Vuorinen",
+      "organisation" : "Tieto Healthcare & Welfare Oy",
+      "email" : "kalle.vuorinen@tieto.com"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "sv"
+    },
+    "author" : {
+      "name" : "Harriet Haglund",
+      "organisation" : "Tieto Healthcare & Welfare Oy",
+      "email" : "harriet.haglund@tieto.com"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es-ar"
+    },
+    "author" : {
+      "name" : "Edgardo Vazquez",
+      "organisation" : "VinculoMedico"
+    },
+    "accreditation" : "Medical Doctor",
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ko"
+    },
+    "author" : {
+      "name" : "Seung-Jong Yu",
+      "organisation" : "NOUSCO Co.,Ltd.",
+      "email" : "seungjong.yu@gmail.com"
+    },
+    "accreditation" : "Certified Board of Family Medicine in South Korea",
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "pt-br"
+    },
+    "author" : {
+      "name" : "Vladimir Pizzo",
+      "organisation" : "Hospital Sirio Libanes, Brazil",
+      "email" : "vladimir.pizzo@hsl.org.br"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ar-sy"
+    },
+    "author" : {
+      "name" : "Mona Saleh"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es"
+    },
+    "author" : {
+      "name" : "Pablo Pazos",
+      "organisation" : "CaboLabs"
+    },
+    "accreditation" : "Computer Engineer",
+    "otherDetails" : { }
+  } ]
+}

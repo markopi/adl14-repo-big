@@ -1,0 +1,3795 @@
+{
+  "@type" : "TEMPLATE",
+  "uid" : "aab23408-3f8d-4bc8-b214-34af97e9abbd",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2015-10-01",
+      "name" : "Heather Leslie",
+      "organisation" : "Ocean Informatics",
+      "email" : "heather.leslie@oceaninformatics.com"
+    },
+    "otherContributors" : [ "Vebjoern Arntzen, Oslo university hospital, Norway", "Silje Ljosland Bakke, National ICT Norway, Norway (openEHR Editor)", "Sistine Barretto-Daniels, Ocean Informatics, Australia", "Lars Bitsch-Larsen, Haukeland University hospital, Norway", "Heather Grain, Llewelyn Grain Informatics, Australia", "Lars Karlsen, DIPS ASA, Norway", "Heather Leslie, Ocean Informatics, Australia (openEHR Editor)", "Yang Lu, University of Melbourne, Australia", "Ian McNicoll, freshEHR Clinical Informatics, United Kingdom (openEHR Editor)", "Andrej Orel, Marand d.o.o., Slovenia" ],
+    "lifecycleState" : {
+      "codeString" : "published"
+    },
+    "copyright" : "© openEHR Foundation",
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : {
+      "author" : "aom14 model importer"
+    },
+    "otherDetails" : {
+      "licence" : "This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.",
+      "custodian_organisation" : "openEHR Foundation",
+      "current_contact" : "Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com",
+      "original_namespace" : "org.openehr",
+      "original_publisher" : "openEHR Foundation",
+      "custodian_namespace" : "org.openehr",
+      "MD5-CAM-1.0.1" : "CA8006DBE4BA91910B594498AB651880",
+      "build_uid" : "dc6e362e-eaf7-43e0-aa3f-b7c02503f0dc",
+      "revision" : "1.0.0"
+    },
+    "details" : {
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "purpose" : "To record a summary of health information about an individual, representing a subset of their health record at a specified point in time.",
+        "keywords" : [ "summary", "synopsis", "overview", "status" ],
+        "use" : "Use as a generic containter to record a summary or overview of a patient's health and/or welfare status as a snapshot of their health at a specified point in time. \n\nThe author of a health summary is usually a clinician who is familiar with the all of the relevant aspects of the individual's health that is the content of the summary.\n\nThe scope of a health summary can vary in different contexts, ranging from an overview of all key aspects of the individual's health and/or welfare to a summary of information focused on a limited aspect of the individual's health.\n\nThe intended readers of the health summary will vary according to the primary purpose and focus of the summary, and may include:\n- any future healthcare providers;\n- clinicians who have no personal knowledge of the individual but are required to provide healthcare, such as emergency treatment or when the individual is travelling;\n- clinicians managing only specific aspects of the individual's health, such as diabetes or pregnancy; and\n- the individual themselves.\n\nThe main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. \n\nEven though clinical content is unconstrained, this archetype supports simple querying for all Health summaries that might be contained within a health record.",
+        "misuse" : "Not to be used to record details about a single clinical consultation, procedure, test or assessment etc.",
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.health_summary.v1",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.health_summary.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "occurrences" : "1..1",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "existence" : "1..1",
+              "multiple" : true,
+              "cardinality" : {
+                "@type" : "CARDINALITY",
+                "interval" : "0..*",
+                "ordered" : false,
+                "unique" : false
+              },
+              "children" : [ {
+                "@type" : "ARCHETYPE_SLOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002",
+                "includes" : [ {
+                  "@type" : "ASSERTION",
+                  "stringExpression" : "archetype_id/value matches {/.*/}",
+                  "expression" : {
+                    "@type" : "BINARY_OPERATOR",
+                    "type" : "BOOLEAN",
+                    "operator" : "matches",
+                    "leftOperand" : {
+                      "@type" : "MODEL_REFERENCE",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Attribute",
+                      "path" : "archetype_id/value"
+                    },
+                    "rightOperand" : {
+                      "@type" : "CONSTRAINT",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Constraint",
+                      "item" : {
+                        "@type" : "C_STRING",
+                        "constraint" : [ "/.*/" ]
+                      }
+                    },
+                    "precedenceOverriden" : false
+                  },
+                  "variables" : [ ]
+                } ],
+                "excludes" : [ ],
+                "closed" : false
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "SECTION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-vital_signs-001.v0"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-substance_use-tobacco-001.v1"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Health summary",
+          "description" : "Generic document containing a summary of health information about an individual."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "rmName" : "openehr",
+  "rmRelease" : "1.0.2",
+  "generated" : true,
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "546fd1ef-c520-4b30-a360-cc815fb2d641",
+    "parentArchetypeId" : "openEHR-EHR-SECTION.vital_signs.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-SECTION.ovl-vital_signs-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "SECTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "multiple" : true,
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-height-001.v1"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.2",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_weight-001.v1"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.3",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_mass_index-001.v1"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.4",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_temperature-001.v1"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..*",
+          "nodeId" : "at0001.5",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-indirect_oximetry-001.v1"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Vital signs",
+            "description" : "A group of observations that are recorded at the same time and record the blood pressure, pulse, temperature and other readings."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Vital signs",
+            "description" : "Vital signs observations."
+          },
+          "at0001.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.2",
+            "text" : "Vital signs",
+            "description" : "Vital signs observations."
+          },
+          "at0001.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.3",
+            "text" : "Vital signs",
+            "description" : "Vital signs observations."
+          },
+          "at0001.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.4",
+            "text" : "Vital signs",
+            "description" : "Vital signs observations."
+          },
+          "at0001.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.5",
+            "text" : "Vital signs",
+            "description" : "Vital signs observations."
+          }
+        },
+        "ko" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "생체 징후",
+            "description" : "동시에 기록되는 관찰사항들의 묶음으로 혈압, 맥박수, 체온과 기타 결과들을 기록한다."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "생체 징후",
+            "description" : "생체 징후 관찰사항"
+          },
+          "at0001.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.2",
+            "text" : "생체 징후",
+            "description" : "생체 징후 관찰사항"
+          },
+          "at0001.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.3",
+            "text" : "생체 징후",
+            "description" : "생체 징후 관찰사항"
+          },
+          "at0001.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.4",
+            "text" : "생체 징후",
+            "description" : "생체 징후 관찰사항"
+          },
+          "at0001.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.5",
+            "text" : "생체 징후",
+            "description" : "생체 징후 관찰사항"
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Vitalparameter",
+            "description" : "Eine Gruppe von Observationen, die zur selben Zeit erfasst werden und den Blutdruck, Puls, Temperatur und andere Messungen beinhalten."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "*Vital signs(en)",
+            "description" : "*Vital signs observations.(en)"
+          },
+          "at0001.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.2",
+            "text" : "*Vital signs(en)",
+            "description" : "*Vital signs observations.(en)"
+          },
+          "at0001.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.3",
+            "text" : "*Vital signs(en)",
+            "description" : "*Vital signs observations.(en)"
+          },
+          "at0001.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.4",
+            "text" : "*Vital signs(en)",
+            "description" : "*Vital signs observations.(en)"
+          },
+          "at0001.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.5",
+            "text" : "*Vital signs(en)",
+            "description" : "*Vital signs observations.(en)"
+          }
+        },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Signos vitales",
+            "description" : "Grupo de observaciones registradas al mismo tiempo para distintos signos vitales (presión arterial, frecuencia cardíaca, temperatura, etc.)"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Signos vitales",
+            "description" : "Observaciones y medidas de signos vitales"
+          },
+          "at0001.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.2",
+            "text" : "Signos vitales",
+            "description" : "Observaciones y medidas de signos vitales"
+          },
+          "at0001.3" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.3",
+            "text" : "Signos vitales",
+            "description" : "Observaciones y medidas de signos vitales"
+          },
+          "at0001.4" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.4",
+            "text" : "Signos vitales",
+            "description" : "Observaciones y medidas de signos vitales"
+          },
+          "at0001.5" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.5",
+            "text" : "Signos vitales",
+            "description" : "Observaciones y medidas de signos vitales"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sebastian Garde",
+        "organisation" : "Ocean Informatics",
+        "email" : "sebastian.garde@oceaninformatics.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ko"
+      },
+      "author" : {
+        "name" : "Seung-Jong Yu",
+        "organisation" : "Yonsei FM Clinic"
+      },
+      "accreditation" : "Medical Doctor",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Pablo Pazos",
+        "organisation" : "CaboLabs"
+      },
+      "accreditation" : "Computer Engineer",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.height.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-height-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "1..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0004.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_QUANTITY",
+                          "occurrences" : "1..1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "property",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "0..1",
+                              "constraint" : [ "at0005" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "units",
+                              "multiple" : false,
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "magnitude",
+                              "multiple" : false,
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_STRING",
+                                "rmTypeName" : "STRING",
+                                "constraint" : [ "cm" ]
+                              }, {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "REAL",
+                                "constraint" : [ {
+                                  "lower" : 0.0,
+                                  "upper" : 1000.0,
+                                  "lowerUnbounded" : true,
+                                  "upperUnbounded" : true,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0018.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0013",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0014.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "1..1",
+                              "assumedValue" : {
+                                "terminologyId" : {
+                                  "value" : "local"
+                                },
+                                "codeString" : "at0016"
+                              },
+                              "terminologyId" : {
+                                "value" : "local"
+                              },
+                              "constraint" : [ "ac0.1" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0019.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0007",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : true,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at0011.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-005.v1"
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "nl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Lengte",
+            "description" : "De lichaamslengte wordt gemeten vanaf de kruin van het hoofd tot en met de voetzool. In het engelse taaldomein wordt er verschil gemaakt tussen hoogte (height) en lengte (length), waarbij hoogte staande gemeten wordt en lengte liggend."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Lengte",
+            "description" : "De lichaamslengte vanaf de kruin van het hoofd tot en met de voetzool."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Opmerking",
+            "description" : "Opmerking over de meting van de lichaamslengte."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Beïnvloedende factoren",
+            "description" : "Vermeld ieder probleem of feit die de meting van de lengte beïnvloedt, b.v. notitie maken van een amputatie."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Positie",
+            "description" : "Positie tijdens de meting, van de gemeten persoon."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Apparaat",
+            "description" : "Beschrijving van het bij de meting gebruikte apparaat."
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Height/Length",
+            "description" : "Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Height",
+            "description" : "The length of the body from crown of head to sole of foot."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Comment",
+            "description" : "Comment about the measurement of body height/length."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Confounding factors",
+            "description" : "Record any issues or factors that may impact on the measurement of body height/length eg noting of amputation."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Position",
+            "description" : "Position of individual when measured."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Device",
+            "description" : "Description of the device used to measure height or body length."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Größe/Länge",
+            "description" : "Größe bzw. Körperlänge wird vom Scheitel bis zur Fußsohle gemessen. Größe wird in einer stehenden Position gemessen, Körperlänge in einer liegenden Position."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Größe/Länge",
+            "description" : "Die Länge des Körpers von Scheitel bis Sohle."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Kommentar",
+            "description" : "Kommentar über die Messung der Körpergröße/-länge."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Einflussfaktoren",
+            "description" : "Zur Dokumentation von Faktoren, die sich auf die Messung der Körpergröße/-länge auswirken können, z.B. einer Amputation."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Position",
+            "description" : "Position des Individiums bei der Messung."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Gerät",
+            "description" : "Beschreibung des Geräts, das zur Messung der Größe oder Länge verwendet wurde."
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Altura / comprimento",
+            "description" : "Altura ou comprimento do corpo, é medida a partir da coroa da cabeça a sola do pé.\nA altura é medida com o indivíduo na posição de pé e comprimento do corpo na posição decúbito dorsal."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Altura / comprimento",
+            "description" : "O comprimento do corpo da coroa da cabeça a sola do pé."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Comentário",
+            "description" : "Comentário sobre a medição da altura/comprimento do corpo."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Fatore de erro",
+            "description" : "Registrar quaisquer problemas ou fatores que possam ter impacto sobre a medição da altura/comprimento do corpo, por exemplo, observação de amputação."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Posição",
+            "description" : "Posição individual quando medido."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Dispositivo",
+            "description" : "Descrição do dispositivo utilizado para medir altura ou comprimento do corpo."
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "قد و یا طول",
+            "description" : "قد یا طول بدن از نوک سر تا کف پا اندازه گیری می شود.بلندی در حالت ایستاده و طول بدن فرد در حالت خوابیده اندازه گیری می شود "
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "قد و یا طول",
+            "description" : "طول فرد از نوک سر تا کف پا "
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "نظر",
+            "description" : "نظر در مورد اندازه گیری قد و یا طول فرد"
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "فاکتورهای جانبی",
+            "description" : "ثبت هر گونه مساله یا فاکتوری که ممکن است روی اندازه گیری قد یا طول تاثیر داشته باشه به عنوان مثال ذکر قطع عضو"
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "موقعیت",
+            "description" : "وضعیت فرد در حال اندازه گیری"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "تجهیز",
+            "description" : "توصیف تجهیز استفاده شده برای اندازه گیری قد یا طول فرد"
+          }
+        },
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "الارتفاع / الطول",
+            "description" : "الارتفاع أو طول الجسم, يتم قياسه من تاج الرأس إلى أخمص القدم. يتم قياس الارتفاع عندما يكون الفرد واقفا, و طول الجسم عندما يكون الفرد مستلقيا."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "الارتفاع / الطول",
+            "description" : "طول الجسم من تاج الرأس إلى أخمص القدم."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "تعليق",
+            "description" : "تعليق حول قياس طول / ارتفاع الجسم."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "العوامل المربكة",
+            "description" : "لتسجيل أي مسائل أو عوامل قد تؤثر على قياس طول / ارتفاع الجسم, مثل آثار البتر."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "الوضع",
+            "description" : "وضع الشخص عند القياس."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "الجهيزة",
+            "description" : "وصف الجهيزة المستخدمة لقياس طول أو ارتفاع الجسم."
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Altura/Longitud corporal",
+            "description" : "La altura o longitud corporal es medida desde la coronilla de la cabeza hasta la planta de los pies. La altura es medida con el individuo en posición erguida y la longitud corporal, en posición recostada."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Altura/Longitud corporal",
+            "description" : "La longitud corporal desde la coronilla de la cabeza hasta la planta de los pies."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Comentario",
+            "description" : "Comentario acerca de la medición de la altura/longitud corporal."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Factores de confusión",
+            "description" : "Registro de todos las aspectos, condiciones o factores que pueden afectar la medición de la altura/longitud corporal, por ejemplo la amputación de miembros inferiores."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Posición",
+            "description" : "Posición del individuo durante la medición de estatura."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Instrumento",
+            "description" : "Descripción del dispositivo usado para medir la altura o la longitud corporal."
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Рост/длина тела",
+            "description" : "Рост или длина тела. Измеряется от макушки до пяток, стоя, или в вытянутом положении."
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Рост/длина тела",
+            "description" : "Рост или длина тела. Измеряется от макушки до пяток, стоя, или в вытянутом положении."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Примечание",
+            "description" : "Примечание к измеряемому росту."
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "Дополнительные обстоятельсва",
+            "description" : "Запишите все вопросы, или факторы, которые могут повлиять на измерения длины тела, например ампутации."
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "Положение",
+            "description" : "Положение человека при измерении"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "Устройство",
+            "description" : "Описание устройства для измерения роста и длины тела."
+          }
+        },
+        "zh-cn" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "身高/身长",
+            "description" : "从头顶至脚底（足底）所测得的身高（高度）/身长（长度）。身高测量采用直立位，而身长测量则采用的是卧位（平卧位）。"
+          },
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "身高/身长",
+            "description" : "从头顶至脚底（足底）的身体高度或长度。"
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "注释",
+            "description" : "关于身高/身长测量结果的注释、评论或意见。"
+          },
+          "at0019.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0019.1",
+            "text" : "干扰因素",
+            "description" : "记录任何可能对身高/身长测量结果造成影响的事项或因素；比如，对于截肢情况的记录。"
+          },
+          "at0014.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0014.1",
+            "text" : "体位",
+            "description" : "测量身高/身长时受检对象的体位或者说身体姿势。"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at0011.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.1",
+            "text" : "装置",
+            "description" : "关于用来测量身高/身长的装置的描述。"
+          }
+        }
+      },
+      "termBindings" : {
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0016", "at0020" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Jasmin Buck, Sebastian Garde",
+        "organisation" : "University of Heidelberg, Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Andrey Tsaplin",
+        "organisation" : "ДГП 99 г. Москвы"
+      },
+      "accreditation" : "Russian Medical State University",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Dr. Leonardo Der Jachadurian",
+        "organisation" : "Bitios.com"
+      },
+      "accreditation" : "Medical Doctor (Internal Medicine Specialist)",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Marco Borges",
+        "organisation" : "P2D",
+        "email" : "marco.borges@p2d.com.br"
+      },
+      "accreditation" : "P2D Health Advisor Council",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "BIPH",
+        "email" : "linforest@163.com"
+      },
+      "accreditation" : "?",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Marja Buur",
+        "organisation" : "Medisch Centrum Alkmaar",
+        "email" : "m.buur-krom@mca.nl"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_weight.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-body_weight-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0002",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0003",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0001",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "1..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at0024.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0015",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : true,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at0020.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-001.v1"
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "وزن الجسم",
+            "description" : "قياس وزن الجسم للشخص"
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "الجهيزة",
+            "description" : "تفاصيل حول الجهيزة المستخدمة في القياس"
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "التعليق",
+            "description" : "تعليق حول قياس الوزن"
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Масса тела",
+            "description" : "Измерение актуальной массы тела человека."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Устройство",
+            "description" : "Весы (устройство, на котором производилось взвешивание): информация."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Комментарии",
+            "description" : "Комментарии к взвешиванию."
+          }
+        },
+        "ja" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "体重",
+            "description" : "個人の体重を測定したもの"
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "測定機器",
+            "description" : "測定に使用された機器についての詳細な記録"
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "コメント",
+            "description" : "体重測定の際のコメント"
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "وزن بدن",
+            "description" : "اندازه گیری وزن بدن فرد"
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "تجهیز",
+            "description" : "توصیف تجهیز استفاده شده برای اندازه گیری وزن"
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "نظر",
+            "description" : "نظر در مورد اندازه گیری وزن "
+          }
+        },
+        "zh-cn" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "体重",
+            "description" : "个人体重（身体重量）的测量。"
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "装置",
+            "description" : "关于称重装置的详细信息。"
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "备注",
+            "description" : "关于体重（身体重量）测量的备注。"
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Peso corporal",
+            "description" : "A medição do peso corporal de um indivíduo."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Dispositivo",
+            "description" : "Detalhes sobre o dispositivo de pesagem."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Comentário",
+            "description" : "Comentário sobre a medição do peso."
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Body weight",
+            "description" : "Measurement of the body weight of an individual."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Device",
+            "description" : "Details about the weighing device."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Comment",
+            "description" : "Comment about the measurement of weight."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Körpergewicht",
+            "description" : "Messung des Körpergewichts eines Individuums."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Gerät",
+            "description" : "Details über die benutzte Waage."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Kommentar",
+            "description" : "Kommentar über die Messung des Gewichts."
+          }
+        },
+        "nl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Lichaamsgewicht",
+            "description" : "Meting van het lichaamsgewicht van een individu."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Apparaat",
+            "description" : "Details over het weeginstrument."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Opmerking",
+            "description" : "Opmerking over de gewichts meting."
+          }
+        },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Peso corporal",
+            "description" : "Medición del peso corporal de un individuo."
+          },
+          "at0020.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0020.1",
+            "text" : "Dispositivo",
+            "description" : "Detalles acerca del dispositivo de pesada."
+          },
+          "at0024.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0024.1",
+            "text" : "Observaciones",
+            "description" : "Observaciones acerca de la medición del peso."
+          }
+        }
+      },
+      "termBindings" : {
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sebastian Garde, Jasmin Buck",
+        "organisation" : "Ocean Informatics, University of Heidelberg"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Igor Lizunov",
+        "email" : "i.lizunov@infinnity.ru"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Marco Borges",
+        "organisation" : "P2D",
+        "email" : "marco.borges@p2d.com.br"
+      },
+      "accreditation" : "P2D Health Advisor Council",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ja"
+      },
+      "author" : {
+        "name" : "Shinji Kobayashi"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh",
+        "email" : "monasaleh01@live.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics",
+        "email" : "Shahla.foozonkhah@oceaninformatics.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "BIPH"
+      },
+      "accreditation" : "What goes here?",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Jose Fernandez-Engo",
+        "organisation" : "Andalusian Healthcare Ministry - IT Division",
+        "email" : "joser.fernandez.exts@juntadeandalucia.es"
+      },
+      "accreditation" : "Responsible IOP Estrategy",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Marja Buur",
+        "organisation" : "Medisch Centrum Alkmaar, Nederland",
+        "email" : "m.buur-krom@mca.nl"
+      },
+      "accreditation" : "Nurse informatics",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_mass_index.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-body_mass_index-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Indice de massa corpórea",
+            "description" : "IMC - medida que compara o peso de uma pessoa com a altura."
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Índice de masa corporal",
+            "description" : "Medición calculada que compara el peso y altura de un individuo"
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "شاخص توده بدن",
+            "description" : "اندازه گیری محاسبه شده ای که وزن و قد افراد را مقایسه می کند\n"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Body mass index",
+            "description" : "Calculated measurement which compares a person's weight and height."
+          }
+        },
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "معامل كتلة الجسم",
+            "description" : "قياس حسابي يجمع بين وزن الشخص و طوله"
+          }
+        },
+        "nl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Body mass index",
+            "description" : "Berekende meting welke gewicht en lengte van een persoon vergelijkt."
+          }
+        },
+        "zh-cn" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "体重指数",
+            "description" : "对个人的体重与身高加以比较而获得的计算型指标。"
+          }
+        }
+      },
+      "termBindings" : {
+        "SNOMED-CT" : { },
+        "LOINC" : { },
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "Universidad de Morón"
+      },
+      "accreditation" : "Universidad de Morón",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Marco Borges",
+        "organisation" : "P2D",
+        "email" : "marco.borges@p2d.com.br"
+      },
+      "accreditation" : "P2D Health Advisor Council",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics",
+        "email" : "shahla.foozonkhah@oceaninformatics.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "BIPH",
+        "email" : "linforest@163.com"
+      },
+      "accreditation" : "?",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Marja Buur",
+        "organisation" : "Medisch Centrum Alkmaar",
+        "email" : "m.buur-krom@mca.nl"
+      },
+      "accreditation" : "Nurse Informatics",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_temperature.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-body_temperature-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0020",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : true,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at0059.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-002.v1"
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Body temperature",
+            "description" : "A measurement of the body temperature, which is a surrogate for the whole body temperature of the person."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Device",
+            "description" : "Details about the device use to measure body temperature."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Körpertemperatur",
+            "description" : "Eine Messung der Körpertemperatur an einer bestimmten Stelle als Surrogat für den gesamten Körper der Person."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Gerät",
+            "description" : "Details über das Gerät, das zur Temperaturmessung benutzt wurde."
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "O valor para a temperatura corporal, com valor médio equivalente para o corpo inteiro."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Dispositivo",
+            "description" : "Detalhes sobre o dispositivo utilizado para medir a temperatura corporal."
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Температура тела",
+            "description" : "Измерение температуры тела, которая является суррогатом температуры тела человека в целом."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Устройство",
+            "description" : "Информация об устройстве, используемом для измерения температуры тела."
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "La medición de la temperatura corporal, que deriva en la temperatura de todo el cuerpo de una persona."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Dispositivo",
+            "description" : "Detalles sobre el dispositivo usado para medir la temperatura corporal."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Kroppstemperatur",
+            "description" : "Måling av kroppstemperatur som skal gjenspeile den faktiske kroppstemperaturen"
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Måleinstrument",
+            "description" : "Detaljer om måleinstrument som ble brukt til å måle temperaturen"
+          }
+        },
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "درجة حرارة الجسم",
+            "description" : "قياس لدرجة حرارة الجسم, و التي تحل كبديل لدرجة الحرارة الكلية لجسم الشخص"
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "الجهيزة",
+            "description" : "تفاصيل حول الجهيزة المستخدمة لقياس درجة حرارة الجسم"
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "دمای بدن",
+            "description" : "اندازه گیری دمای بدن که جایگزینی برای دمای کل بدن فرد است"
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "تجهیز",
+            "description" : "جزییاتی در موردتجهیزات استفاده شده در اندازه گیری دمای بدن"
+          }
+        },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "La medición de la temperatura corporal, que deriva en la temperatura de todo el cuerpo de una persona."
+          },
+          "at0059.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0059.1",
+            "text" : "Dispositivo",
+            "description" : "Detalles sobre el dispositivo usado para medir la temperatura corporal."
+          }
+        }
+      },
+      "termBindings" : {
+        "LNC205" : { },
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sebastian Garde",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Igor Lizunov",
+        "email" : "i.lizunov@infinnity.ru"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Jostein Ven",
+        "organisation" : "KITH",
+        "email" : "jostein.ven@kith.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "University of Morón"
+      },
+      "accreditation" : "University of Morón",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Marco Borges",
+        "organisation" : "P2D",
+        "email" : "marco.borges@p2d.com.br"
+      },
+      "accreditation" : "P2D Health Advisor Council",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "University of Morón"
+      },
+      "accreditation" : "University of Morón",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.indirect_oximetry.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-indirect_oximetry-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0007",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..1",
+              "nodeId" : "at0018.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-003.v1"
+            }, {
+              "@type" : "C_ARCHETYPE_ROOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0056.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ],
+              "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-004.v1"
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "  قياس التأكسج غير المباشر",
+            "description" : " \nطريقة لمراقبة قياسات غازات الدم مثل تشبع الدم الطرفي بالأكسجين و الضغط الجزئي للأكسجين في الدم الطرفي, بطريقة غير مباشرة و غير باضعة.\n"
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "الجهيزة",
+            "description" : " \nتفاصيل حول جهيزة قياس التأكسج بطريقة غير باضعة.\n"
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "*Oxygen Delivery Device(en)",
+            "description" : "*Details of the oxygen delivery device used.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Oximetría de pulso (indirecta)",
+            "description" : "Método para monitorear las mediciones de gases arteriales tales como SpO2 y PtcO2 por medios indirectos y habitualmente no invasivos."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Dispositivo",
+            "description" : "Detalles del dispositivo de oximetría no invasiva utilizado."
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "*Oxygen Delivery Device(en)",
+            "description" : "*Details of the oxygen delivery device used.(en)"
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Oximetry(en)",
+            "description" : "*Method of monitoring blood gas measurements such as Spo2 and pTCO2 by indirect, currently non-invasive, means.(en)"
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "*Device(en)",
+            "description" : "*Details of the non-invasive oximetry device used.(en)"
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "*Cluster(en)",
+            "description" : "**(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Indirect Oximetry",
+            "description" : "Method of monitoring blood gas measurements such as Spo2 and pTCO2 by indirect, currently non-invasive, means."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Oximetry Device",
+            "description" : "Details of the non-invasive oximetry device used."
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "Oxygen Delivery Device",
+            "description" : "Details of the oxygen delivery device used."
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "روش اندازه گیری اکسیژن خون غیر مستقیم",
+            "description" : "روش کنترل اندازه گیری گاز خون نظیر ... و .... به روش غیر مستقیم ، در حال حاضر غیر تهاجمی "
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "تجهیز",
+            "description" : "جزییاتی در مورد تجهیزات غیر تهاجمی استفاده شده"
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "*Oxygen Delivery Device(en)",
+            "description" : "*Details of the oxygen delivery device used.(en)"
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Непрямая оксиметрия",
+            "description" : "Неинвазивный метод непрерывного контроля насыщения крови кислородом путём измерения таких показателей как SpO2 (насыщение кислородом периферической крови) и pTCO2 (насыщение углекислым газом)."
+          },
+          "at0018.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0018.1",
+            "text" : "Устройство",
+            "description" : "Информация об используемом неинвазивном оксиметрическом устройстве."
+          },
+          "at0056.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0056.1",
+            "text" : "*Oxygen Delivery Device(en)",
+            "description" : "*Details of the oxygen delivery device used.(en)"
+          }
+        }
+      },
+      "termBindings" : {
+        "SNOMED-CT" : {
+          "at0000.1" : "term:SNOMED-CT::252465000",
+          "at0018.1" : "term:SNOMED-CT::448703006"
+        },
+        "LOINC" : { },
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Jasmin Buck, Sebastian Garde",
+        "organisation" : "University of Heidelberg, Central Queensland University"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Vyacheslav Mavrin",
+        "organisation" : "JSC Comsoft"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Dr. Leonardo Der Jachadurian",
+        "organisation" : "Bitios.com"
+      },
+      "accreditation" : "Medical Doctor (Internal Medicine Specialist)",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "multiple" : true,
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0001.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "multiple" : false,
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_TEXT",
+              "occurrences" : "1..1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "*Device name(en)",
+            "description" : "*Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.(en)",
+            "comment" : "*This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. With specific examples.\n\n Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\n(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medical Device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Device name",
+            "description" : "Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.",
+            "comment" : "This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\n"
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Enhets navn",
+            "description" : "*Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.(en)",
+            "comment" : "*This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. With specific examples.\n\n Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\n(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "*Device name(en)",
+            "description" : "*Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.(en)",
+            "comment" : "*This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. With specific examples.\n\n Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\n(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital",
+        "email" : "lbla@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medical Device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital",
+        "email" : "lbla@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-003.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medical Device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital",
+        "email" : "lbla@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-004.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medical Device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital",
+        "email" : "lbla@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-005.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medical Device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical Device(en)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Lars Bitsch-Larsen",
+        "organisation" : "Haukeland University Hospital",
+        "email" : "lbla@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.substance_use-tobacco.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-substance_use-tobacco-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "nodeId" : "at0010",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "multiple" : true,
+                        "cardinality" : {
+                          "@type" : "CARDINALITY",
+                          "interval" : "0..*",
+                          "ordered" : false,
+                          "unique" : false
+                        },
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0011.0.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_CODED_TEXT",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "defining_code",
+                                "existence" : "1..1",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "1..1",
+                                  "terminologyId" : {
+                                    "value" : "local"
+                                  },
+                                  "constraint" : [ "ac0.0.1" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0012.0.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_BOOLEAN",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_BOOLEAN",
+                                  "rmTypeName" : "BOOLEAN",
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_IDENTIFIER",
+                              "occurrences" : "0..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_MULTIMEDIA",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "media_type",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "0..1",
+                                  "terminologyId" : {
+                                    "value" : "openEHR"
+                                  },
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_QUANTITY",
+                              "occurrences" : "0..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_COUNT",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "magnitude",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_INTEGER",
+                                  "rmTypeName" : "INTEGER",
+                                  "constraint" : [ {
+                                    "lowerUnbounded" : false,
+                                    "upperUnbounded" : false,
+                                    "lowerIncluded" : false,
+                                    "upperIncluded" : false
+                                  } ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DATE_TIME",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_DATE_TIME",
+                                  "rmTypeName" : "DATE_TIME",
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_DURATION",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_DURATION",
+                                  "rmTypeName" : "DURATION",
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_ORDINAL",
+                              "occurrences" : "0..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_PROPORTION",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "numerator",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_REAL",
+                                  "rmTypeName" : "REAL",
+                                  "constraint" : [ {
+                                    "lowerUnbounded" : false,
+                                    "upperUnbounded" : false,
+                                    "lowerIncluded" : false,
+                                    "upperIncluded" : false
+                                  } ]
+                                } ]
+                              }, {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "denominator",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_REAL",
+                                  "rmTypeName" : "REAL",
+                                  "constraint" : [ {
+                                    "lowerUnbounded" : false,
+                                    "upperUnbounded" : false,
+                                    "lowerIncluded" : false,
+                                    "upperIncluded" : false
+                                  } ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_URI",
+                              "occurrences" : "0..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_STRING",
+                                  "rmTypeName" : "STRING",
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_TEXT",
+                              "occurrences" : "0..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_CODED_TEXT",
+                              "occurrences" : "0..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_COUNT>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_QUANTITY>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            }, {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                              "occurrences" : "1..1",
+                              "attributes" : [ ],
+                              "attributeTuples" : [ ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0012.1.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_QUANTITY",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "property",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "0..1",
+                                  "constraint" : [ "at0.1" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ {
+                                "@type" : "C_ATTRIBUTE_TUPLE",
+                                "members" : [ {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "units",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                }, {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "magnitude",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                } ],
+                                "tuples" : [ {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/h" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/d" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/wk" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0012.2.1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_QUANTITY",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "property",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "0..1",
+                                  "constraint" : [ "at0.7" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ {
+                                "@type" : "C_ATTRIBUTE_TUPLE",
+                                "members" : [ {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "units",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                }, {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "magnitude",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                } ],
+                                "tuples" : [ {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "gm/d" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "gm/wk" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0012.1.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_QUANTITY",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "property",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "0..1",
+                                  "constraint" : [ "at0.1" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ {
+                                "@type" : "C_ATTRIBUTE_TUPLE",
+                                "members" : [ {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "units",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                }, {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "magnitude",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                } ],
+                                "tuples" : [ {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/h" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/d" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "/wk" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0012.2.2",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "value",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_COMPLEX_OBJECT",
+                              "rmTypeName" : "DV_QUANTITY",
+                              "occurrences" : "1..1",
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "property",
+                                "multiple" : false,
+                                "children" : [ {
+                                  "@type" : "C_TERMINOLOGY_CODE",
+                                  "rmTypeName" : "TERMINOLOGY_CODE",
+                                  "occurrences" : "0..1",
+                                  "constraint" : [ "at0.7" ]
+                                } ]
+                              } ],
+                              "attributeTuples" : [ {
+                                "@type" : "C_ATTRIBUTE_TUPLE",
+                                "members" : [ {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "units",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                }, {
+                                  "@type" : "C_ATTRIBUTE",
+                                  "rmAttributeName" : "magnitude",
+                                  "multiple" : false,
+                                  "children" : [ ]
+                                } ],
+                                "tuples" : [ {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "gm/d" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                }, {
+                                  "@type" : "C_PRIMITIVE_TUPLE",
+                                  "members" : [ {
+                                    "@type" : "C_STRING",
+                                    "rmTypeName" : "STRING",
+                                    "constraint" : [ "gm/wk" ]
+                                  }, {
+                                    "@type" : "C_REAL",
+                                    "rmTypeName" : "REAL",
+                                    "constraint" : [ {
+                                      "lowerUnbounded" : false,
+                                      "upperUnbounded" : false,
+                                      "lowerIncluded" : false,
+                                      "upperIncluded" : false
+                                    } ]
+                                  } ]
+                                } ]
+                              } ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000.1",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1.1",
+            "text" : "Tobacco Use",
+            "description" : "Archetype to record the actual use or consumption of a tobacco at the present time, a specific time or over a period of time. "
+          },
+          "at0012.0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.0.1",
+            "text" : "Amount",
+            "description" : "Amount of substance consumed.  Data type can be further specified in specialised archetypes or in templates"
+          },
+          "at0011.0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0011.0.1",
+            "text" : "Form",
+            "description" : "Form of tobacco used"
+          },
+          "ac0.0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.0.1",
+            "description" : null
+          },
+          "at0012.1.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.1.1",
+            "text" : "Number smoked",
+            "description" : "Number of units containing tobacco consumed eg cigarettes or cigars"
+          },
+          "at0012.2.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0012.2.1",
+            "text" : "Grams of tobacco",
+            "description" : "Weight of tobacco consumed eg in a pipe"
+          }
+        }
+      },
+      "termBindings" : {
+        "openehr" : { }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.0.1",
+          "members" : [ "at0.3", "at0.4", "at0.5", "at0.6" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ ]
+  } ],
+  "templateId" : "Medtronic - Patient Health Summary",
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ ]
+}

@@ -1,0 +1,144 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-ADMIN_ENTRY.admit_source.v0
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            purpose = <"*(en)">
+            copyright = <"*(en)">
+            use = <"*(en)">
+            misuse = <"*(en)">
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            purpose = <"*(en)">
+            copyright = <"*(en)">
+            use = <"*(en)">
+            misuse = <"*(en)">
+        >
+    >
+
+definition
+    ADMIN_ENTRY[at0000] matches {
+        data matches {
+            ITEM_TREE[at0001] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0002] occurrences matches {0..1} matches {
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0003] occurrences matches {0..1} matches {
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"en", "fi", "sv", ...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Admit source">
+                    description = <"unknown">
+
+                >
+                ["at0001"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Admit source">
+                    description = <"Where did the patient come from">
+
+                >
+                ["at0003"] = <
+                    text = <"Ability to function">
+                    description = <"Ability to function">
+
+                >
+            >
+        >
+        ["fi"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Mistä tuli">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Tree">
+                    description = <"*@ internal @(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Mistä tuli">
+                    description = <"*Where did the patient come from(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Toimintakyky">
+                    description = <"*Ability to function(en)">
+
+                >
+            >
+        >
+        ["sv"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Kommer ifrån">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Tree">
+                    description = <"*@ internal @(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Kommer ifrån">
+                    description = <"*Where did the patient come from(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Funktionsförmåga">
+                    description = <"*Ability to function(en)">
+
+                >
+            >
+        >
+    >

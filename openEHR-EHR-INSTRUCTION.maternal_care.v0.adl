@@ -1,0 +1,261 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-INSTRUCTION.maternal_care.v0
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    INSTRUCTION[at0000] matches {
+        activities cardinality matches {0..*; unordered} matches {
+            ACTIVITY[at0001] occurrences matches {0..*} matches {
+                action_archetype_id matches {/openEHR-EHR-ACTION\.maternal_care\.v0/}
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0005] occurrences matches {0..*} matches {
+                action_archetype_id matches {/openEHR-EHR-ACTION\.maternal_care\.v0/}
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0007] occurrences matches {0..*} matches {
+                action_archetype_id matches {/openEHR-EHR-ACTION\.maternal_care\.v0/}
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0011] occurrences matches {0..*} matches {
+                action_archetype_id matches {/openEHR-EHR-ACTION\.maternal_care\.v0/}
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0014] occurrences matches {0..*} matches {
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description(-[a-zA-Z0-9_]+)*\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0017] occurrences matches {0..*} matches {
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0021] occurrences matches {0..*} matches {
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+            ACTIVITY[at0023] occurrences matches {0..*} matches {
+                description matches {
+                    allow_archetype ITEM_TREE matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ITEM_TREE\.maternal_care_description(-[a-zA-Z0-9_]+)*\.v0/}
+                        exclude
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"en", "fi", "sv", ...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Maternal care">
+                    description = <"Describes phases for Maternal Care protocol">
+
+                >
+                ["at0001"] = <
+                    text = <"1-7 vrk Th,Käynti/Kotikäynti">
+                    description = <"1-7 vrk Th,Käynti/Kotikäynti">
+
+                >
+                ["at0005"] = <
+                    text = <"5-12 vk Jälkitark/Lääk.käynti">
+                    description = <"5-12 vk Jälkitark/Lääk.käynti">
+
+                >
+                ["at0007"] = <
+                    text = <"5-12 vk Jälkitark/Th.käynti">
+                    description = <"5-12 vk Jälkitark/Th.käynti">
+
+                >
+                ["at0011"] = <
+                    text = <"H 11-13 UÄ (niskaturvotus)">
+                    description = <"Varhaisen yleisen ultraäänitutkimuksen yhteydessä voidaan mitata sikiön niskaturvotus 11-13 raskausviikolla sikiön kromosomipoikkeavuuksien seulontaa varten.">
+
+                >
+                ["at0014"] = <
+                    text = <"H 13 - 18 Lääk.tarkastus/laaja">
+                    description = <"Lorem ipsum dolor sit amet">
+
+                >
+                ["at0017"] = <
+                    text = <"H 13 -18 Th.käynti/laaja">
+                    description = <"Lorem ipsum dolor sit amet">
+
+                >
+                ["at0021"] = <
+                    text = <"H 18 - 21 UÄ (rakenne)">
+                    description = <"Rakennepoikkeavuuksien ultraääniseulonta tehdään raskausviikolla 18+0−21+6. Tutkimus voidaan tehdä vaihtoehtoisesti viikon 24+0 jälkeen. Raskautta ei voi keskeyttää rakennepoikkeavuuksienkaan vuoksi enää raskausviikon 24+0 jälkeen.">
+
+                >
+                ["at0023"] = <
+                    text = <"Muu">
+                    description = <"Muu tehtävä">
+
+                >
+            >
+        >
+        ["fi"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"*Maternal care(en)">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"*1-7 vrk Th,Käynti/Kotikäynti(en)">
+                    description = <"*1-7 vrk Th,Käynti/Kotikäynti(en)">
+
+                >
+                ["at0005"] = <
+                    text = <"*5-12 vk Jälkitark/Lääk.käynti(en)">
+                    description = <"*5-12 vk Jälkitark/Lääk.käynti(en)">
+
+                >
+                ["at0007"] = <
+                    text = <"*5-12 vk Jälkitark/Th.käynti(en)">
+                    description = <"*5-12 vk Jälkitark/Th.käynti(en)">
+
+                >
+                ["at0011"] = <
+                    text = <"*H 11-13 UÄ (niskaturvotus)(en)">
+                    description = <"*Varhaisen yleisen ultraäänitutkimuksen yhteydessä voidaan mitata sikiön niskaturvotus 11-13 raskausviikolla sikiön kromosomipoikkeavuuksien seulontaa varten.(en)">
+
+                >
+                ["at0014"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0017"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0021"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0023"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+            >
+        >
+        ["sv"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"*Maternal care(en)">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"*1-7 vrk Th,Käynti/Kotikäynti(en)">
+                    description = <"*1-7 vrk Th,Käynti/Kotikäynti(en)">
+
+                >
+                ["at0005"] = <
+                    text = <"*5-12 vk Jälkitark/Lääk.käynti(en)">
+                    description = <"*5-12 vk Jälkitark/Lääk.käynti(en)">
+
+                >
+                ["at0007"] = <
+                    text = <"*5-12 vk Jälkitark/Th.käynti(en)">
+                    description = <"*5-12 vk Jälkitark/Th.käynti(en)">
+
+                >
+                ["at0011"] = <
+                    text = <"*H 11-13 UÄ (niskaturvotus)(en)">
+                    description = <"*Varhaisen yleisen ultraäänitutkimuksen yhteydessä voidaan mitata sikiön niskaturvotus 11-13 raskausviikolla sikiön kromosomipoikkeavuuksien seulontaa varten.(en)">
+
+                >
+                ["at0014"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0017"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0021"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+                ["at0023"] = <
+                    text = <"*New activity(en)">
+                    description = <"**(en)">
+
+                >
+            >
+        >
+    >

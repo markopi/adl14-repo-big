@@ -1,0 +1,2024 @@
+{
+  "@type" : "TEMPLATE",
+  "description" : {
+    "@type" : "RESOURCE_DESCRIPTION",
+    "originalAuthor" : {
+      "date" : "2005-10-10",
+      "name" : "Thomas Beale",
+      "organisation" : "Ocean Informatics, UK",
+      "email" : "thomas.beale@oceaninformatics.com"
+    },
+    "otherContributors" : [ ],
+    "lifecycleState" : {
+      "codeString" : "published"
+    },
+    "copyright" : "© openEHR Foundation",
+    "ipAcknowledgements" : { },
+    "references" : { },
+    "conversionDetails" : {
+      "author" : "aom14 model importer"
+    },
+    "otherDetails" : { },
+    "details" : {
+      "ar-sy" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ar-sy"
+        },
+        "purpose" : "تسجيل المقابلة على هيئة ملاحظة تقدم الحالة",
+        "keywords" : [ "التقدم", "ملاحظة", "المقابلة" ],
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "es-ar" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es-ar"
+        },
+        "purpose" : "Registrar los detalles documentales de una única interacción, contacto o evento de cuidado entre un sujeto de cuidados y uno o más proveedores de uno o más servicios de salud. Esta interacción puede ser presencial o remota.",
+        "keywords" : [ "encuentro", "contacto", "visita", "evento de cuidados", "consulta" ],
+        "use" : "Utilícese como un contendor de nivel de documento para el registro de una única interacción, contacto o evento de cuidados entre un sujeto de cuidados y uno o mas proveedores de cuidados de la salud.\nEl contacto puede ser cara a cara, o por vía telefónicao de cualquier otro medio electrónico. La modalidad puede ser representada, si asi se requiere, por medio del atributo modo de la COMPOSITION.\nEl componente principal de Secciones o Contenido se ha mantenido deliberadamente libre de restricciones. Esto permite que se incluya en la plantilla cualquier Sección (SECTION) o Asiento (ENTRY) apropiado al propósito clínico.\nAún cuando se encuentra libre de restricciones en cuanto al contenido clínico, la especificación del COMPOSITION.Encounter agreva valor significativo al permitir la consulta explícita de todos los encuentros conteidos en una historia clínica.\nEl componente de Contexto contiene un slot opcional \"Extensión\"\"que puede ser utilizado en el diseño de una plantilla para:\n-agregar información opcional de contexto, tal como información sobre el episodio, o\n-permitir la armonización o alineamiento con otros formalismos de modelado tales como FHIR o CIMI, como puede ser la representación explícita de participantes que son generalmente manejados por el Modelo de Referencia en un arquetipo openEHR.\nSon ejemplos típicos una visita a consultorio, una observación de enfermería o una consulta de telemedicina.",
+        "misuse" : "No debe ser utilizado para registrar los detalles de la totalidad de un episodio de cuidado\nNo debe ser utilizado para almacenar información sumaria persistente de un paciente, tale como una lista de problemas o un resumen de medicamentos.\nNo debe ser utilizado para representar el informe de un servicio diagnóstico, tal como un estudio de imágenes o una pruena de laboratorio.\nNo debe ser utilizado para representar el recurso FHIR del mismo nombre ya que existe una diapridad de alcance y propósito.",
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "en" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "en"
+        },
+        "purpose" : "To record the document level details of a single interaction, contact or care event between a subject of care and healthcare provider(s) for the provision of healthcare service(s). This can be either a face-to-face or remote interaction.",
+        "keywords" : [ "encounter", "contact", "visit", "care event" ],
+        "use" : "Use as a generic document-level container for recording details of a single interaction, contact or care event between a subject of care and healthcare provider(s). \nThe contact may be face-to-face, via telephone or another electronic medium. Modality can be captured, if required, via the reference model COMPOSITION/mode attribute.\n\nThe main Sections/Content component has been deliberately left unconstrained. This will allow it to be populated with any SECTION or ENTRY archetypes appropriate for the clinical purpose within a template. \n\nEven though unconstrained for clinical content, specification of COMPOSITION.Encounter provides significant value by allowing for explicit querying of all Encounters within a patient record.\n\nThe Context component contains an optional 'Extension' SLOT that can be used in template design to:\n- add optional contextual information, such as episode information; or\n- allow for harmonisation or alignment with other model formalisms such as FHIR or CIMI, such as explicit representation of participants that are usually managed by the openEHR Reference Model in an openEHR archetype.\n\nTypical examples are a clinic visit, a nursing observation or a telemedicine consultation.",
+        "misuse" : "Not to be used to record details about an entire episode of care.\n\nNot to be used to carry persistent, summarised patient information, such as a problem list or medication summary.\n\nNot to be used to represent the report of a diagnostic service, such as imaging or laboratory testing.\n\nNot to be used to represent the FHIR resource of the same name - there is a mismatch scope and intent.",
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "ko" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "ko"
+        },
+        "purpose" : "외래기록, 경과기록, 간호기록과 일반적인 노트 등과 같은 환자를 대면한 후 작성하는 기록",
+        "keywords" : [ "*경과(ko)", "*노트(ko)", "*외래(ko)" ],
+        "copyright" : "© openEHR Foundation",
+        "originalResourceUri" : { }
+      },
+      "pt-br" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "pt-br"
+        },
+        "purpose" : "Registrar os detalhes de uma interação, contato ou episódio de cuidado para a provisão de serviços de saúde entre um sujeito do cuidado e um profissional de saúde. Pode se referir tanto a uma interação presencial quanto à distância.",
+        "keywords" : [ "encontro", "contato", "visita", "episódio de cuidado" ],
+        "use" : "Usar como um documento genérico para registrar detalhes de uma interação simples, contato ou episódio de atenção à saúde entre um sujeito do cuidado e profissional(is) de saúde.\nO contato pode ser presencial, via telefone ou outro meio eletrônico. A modalidade pode ser identificada, se necessário, através do modelo de referência COMPOSITION/mode attribute.\n\nO componente main Sections/Content foi deixado deliberadamente sem restrições. Isto permitirá que ele seja populado com qualquer arquétipo SECTION ou ENTRY apropriado para o propósito clínico em um template.\n\nEmbora sem restrições para conteúdo clínico, especificação de COMPOSITION, Encounter oferece importante valor por permitir pesquisa de todos os Encontros num prontuário do paciente. \n\nO componente Contexto contem um SLOT 'Extensão' opcional que pode ser usado no design do template para:\n- adicionar informação contextual opcional, como informação do episódio; ou\n- permitir a harmonização ou alinhamento com outros modelos ou formalismos como FHIR ou CIMI, como uma representação explícita de participantes que normalmente são gerenciados pelo Modelo de Referência openEHR num arquétipo openEHR.\n\nExemplos típicos são visita a uma clínica, observação de enfermagem ou uma consulta de telemedicina.",
+        "misuse" : "Não deve ser utilizado para registrar detalhes de um episódio de cuidado completo.\n\nNão deve ser utilizado para guardar informações persistentes, resumidas de um paciente, como uma lista de problemas ou resumo de medicamentos.\n\nNão deve ser utilizado para representar o relato de um serviço diagnóstico como exames laboratoriais ou de imagem.\n\nNão deve ser utilizado para representar recurso FHIR do mesmo nome - há uma incompatibilidade de objetivo e intenção.",
+        "originalResourceUri" : { }
+      },
+      "es" : {
+        "@type" : "RESOURCE_DESCRIPTION_ITEM",
+        "language" : {
+          "terminologyId" : {
+            "value" : "ISO_639-1"
+          },
+          "codeString" : "es"
+        },
+        "purpose" : "Registrar, a nivel de documento, una única interacción, contacto o evento de cuidado, entre un sujeto de cuidado (paciente) y un proveedor de servicios de salud (profesional médico, de enfermería, etc.). Puede ser una interacción cara a cara o remota.",
+        "keywords" : [ "encuentro", "contacto", "visita", "evento de cuidado" ],
+        "use" : "Se debe usar como una definición de documento genérico para registrar información de una única interacción o contacto con un proveedor de salud. Esta definición no especifica la estructura interna de secciones y entradas. Dicha especificación debería hacerse mediante especializaciones del arquetipo o mediante plantillas operativas (Operational Templates - OPT).",
+        "misuse" : "No se debe utilizar para registrar información de un episodio de salud entero.\n\nNo debe contener información persistente o resúmenes, como lista de problemas o medicación.\n\nNo se debe usar para registrar resultados de laboratorio o imagenología.\n",
+        "originalResourceUri" : { }
+      }
+    }
+  },
+  "parentArchetypeId" : "openEHR-EHR-COMPOSITION.encounter.v1",
+  "differential" : true,
+  "archetypeId" : {
+    "@type" : "ARCHETYPE_HRID",
+    "value" : "openEHR-EHR-COMPOSITION.encounter.v1"
+  },
+  "definition" : {
+    "@type" : "C_COMPLEX_OBJECT",
+    "rmTypeName" : "COMPOSITION",
+    "nodeId" : "at0000.1",
+    "attributes" : [ {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "category",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "DV_CODED_TEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "defining_code",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_TERMINOLOGY_CODE",
+            "rmTypeName" : "CODE_PHRASE",
+            "occurrences" : "1..1",
+            "terminologyId" : {
+              "value" : "openehr"
+            },
+            "constraint" : [ "433" ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "context",
+      "multiple" : false,
+      "children" : [ {
+        "@type" : "C_COMPLEX_OBJECT",
+        "rmTypeName" : "EVENT_CONTEXT",
+        "occurrences" : "1..1",
+        "attributes" : [ {
+          "@type" : "C_ATTRIBUTE",
+          "rmAttributeName" : "other_context",
+          "existence" : "1..1",
+          "multiple" : false,
+          "children" : [ {
+            "@type" : "C_COMPLEX_OBJECT",
+            "rmTypeName" : "ITEM_TREE",
+            "occurrences" : "1..1",
+            "nodeId" : "at0001",
+            "attributes" : [ {
+              "@type" : "C_ATTRIBUTE",
+              "rmAttributeName" : "items",
+              "existence" : "1..1",
+              "multiple" : true,
+              "cardinality" : {
+                "@type" : "CARDINALITY",
+                "interval" : "0..*",
+                "ordered" : false,
+                "unique" : false
+              },
+              "children" : [ {
+                "@type" : "ARCHETYPE_SLOT",
+                "rmTypeName" : "CLUSTER",
+                "occurrences" : "0..*",
+                "nodeId" : "at0002",
+                "includes" : [ {
+                  "@type" : "ASSERTION",
+                  "stringExpression" : "archetype_id/value matches {/.*/}",
+                  "expression" : {
+                    "@type" : "BINARY_OPERATOR",
+                    "type" : "BOOLEAN",
+                    "operator" : "matches",
+                    "leftOperand" : {
+                      "@type" : "MODEL_REFERENCE",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Attribute",
+                      "path" : "archetype_id/value"
+                    },
+                    "rightOperand" : {
+                      "@type" : "CONSTRAINT",
+                      "type" : "STRING",
+                      "precedenceOverriden" : false,
+                      "referenceType" : "Constraint",
+                      "item" : {
+                        "@type" : "C_STRING",
+                        "constraint" : [ "/.*/" ]
+                      }
+                    },
+                    "precedenceOverriden" : false
+                  },
+                  "variables" : [ ]
+                } ],
+                "excludes" : [ ],
+                "closed" : false
+              } ]
+            } ],
+            "attributeTuples" : [ ]
+          } ]
+        } ],
+        "attributeTuples" : [ ]
+      } ]
+    }, {
+      "@type" : "C_ATTRIBUTE",
+      "rmAttributeName" : "content",
+      "multiple" : true,
+      "cardinality" : {
+        "@type" : "CARDINALITY",
+        "interval" : "0..*",
+        "ordered" : false,
+        "unique" : false
+      },
+      "children" : [ {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.1",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-blood_pressure-001.v1"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "OBSERVATION",
+        "occurrences" : "0..*",
+        "nodeId" : "at0.2",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-body_temperature-001.v1"
+      } ]
+    } ],
+    "attributeTuples" : [ ]
+  },
+  "terminology" : {
+    "@type" : "ARCHETYPE_TERMINOLOGY",
+    "conceptCode" : "at0000",
+    "termDefinitions" : {
+      "ar-sy" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        }
+      },
+      "en" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encounter",
+          "description" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
+        }
+      },
+      "es-ar" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encuentro",
+          "description" : "Interacción, contacto o evento de cuidados entre un sujeto de cuidados y uno o más proveedores de cuidados de la salud."
+        }
+      },
+      "ko" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "*Encounter(en)",
+          "description" : "*Interaction, contact or care event between a subject of care and healthcare provider(s).(en)"
+        }
+      },
+      "pt-br" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encontro",
+          "description" : "Interação, contato ou cuidado entre o sujeito do cuidado e profissional(is) de saúde."
+        }
+      },
+      "es" : {
+        "at0000.1" : {
+          "@type" : "ARCHETYPE_TERM",
+          "code" : "at0000.1",
+          "text" : "Encuentro",
+          "description" : "Interacción, contacto o evento de cuidado entre un paciente y un proveedor de salud."
+        }
+      }
+    },
+    "termBindings" : { },
+    "terminologyExtracts" : { },
+    "valueSets" : { }
+  },
+  "adlVersion" : "1.4",
+  "rmName" : "openehr",
+  "rmRelease" : "1.0.2",
+  "generated" : true,
+  "otherMetaData" : { },
+  "templateOverlays" : [ {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b1506a87-9bf2-4978-9eed-6ceecb0c2be9",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.blood_pressure.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-blood_pressure-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "1..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0006",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at0033.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0007",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "multiple" : true,
+                    "cardinality" : {
+                      "@type" : "CARDINALITY",
+                      "interval" : "0..*",
+                      "ordered" : false,
+                      "unique" : false
+                    },
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "nodeId" : "at1052.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at1043.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_CODED_TEXT",
+                          "occurrences" : "1..1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "defining_code",
+                            "existence" : "1..1",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "1..1",
+                              "assumedValue" : {
+                                "terminologyId" : {
+                                  "value" : "local"
+                                },
+                                "codeString" : "at1044"
+                              },
+                              "terminologyId" : {
+                                "value" : "local"
+                              },
+                              "constraint" : [ "ac0.1" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    }, {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "ELEMENT",
+                      "occurrences" : "0..0",
+                      "nodeId" : "at1005.1",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "value",
+                        "multiple" : false,
+                        "children" : [ {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "DV_QUANTITY",
+                          "occurrences" : "1..1",
+                          "attributes" : [ {
+                            "@type" : "C_ATTRIBUTE",
+                            "rmAttributeName" : "property",
+                            "multiple" : false,
+                            "children" : [ {
+                              "@type" : "C_TERMINOLOGY_CODE",
+                              "rmTypeName" : "TERMINOLOGY_CODE",
+                              "occurrences" : "0..1",
+                              "constraint" : [ "at0009" ]
+                            } ]
+                          } ],
+                          "attributeTuples" : [ {
+                            "@type" : "C_ATTRIBUTE_TUPLE",
+                            "members" : [ {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "units",
+                              "multiple" : false,
+                              "children" : [ ]
+                            }, {
+                              "@type" : "C_ATTRIBUTE",
+                              "rmAttributeName" : "magnitude",
+                              "multiple" : false,
+                              "children" : [ ]
+                            } ],
+                            "tuples" : [ {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_STRING",
+                                "rmTypeName" : "STRING",
+                                "constraint" : [ "°" ]
+                              }, {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "REAL",
+                                "constraint" : [ {
+                                  "lower" : -90.0,
+                                  "upper" : 90.0,
+                                  "lowerUnbounded" : true,
+                                  "upperUnbounded" : true,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true
+                                } ]
+                              } ]
+                            }, {
+                              "@type" : "C_PRIMITIVE_TUPLE",
+                              "members" : [ {
+                                "@type" : "C_STRING",
+                                "rmTypeName" : "STRING",
+                                "constraint" : [ "deg" ]
+                              }, {
+                                "@type" : "C_REAL",
+                                "rmTypeName" : "REAL",
+                                "constraint" : [ {
+                                  "lower" : -90.0,
+                                  "upper" : 90.0,
+                                  "lowerUnbounded" : true,
+                                  "upperUnbounded" : true,
+                                  "lowerIncluded" : true,
+                                  "upperIncluded" : true
+                                } ]
+                              } ]
+                            } ]
+                          } ]
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "INTERVAL_EVENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at1042.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "math_function",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "1..1",
+                    "multiple" : false,
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "CODE_PHRASE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "openehr"
+                      },
+                      "constraint" : [ "146" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "width",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DURATION",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "existence" : "1..1",
+                    "multiple" : false,
+                    "children" : [ {
+                      "@type" : "C_DURATION",
+                      "rmTypeName" : "DV_DURATION",
+                      "occurrences" : "1..1",
+                      "constraint" : [ {
+                        "lower" : "PT24H",
+                        "upper" : "PT24H",
+                        "lowerUnbounded" : false,
+                        "upperUnbounded" : false,
+                        "lowerIncluded" : true,
+                        "upperIncluded" : true
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT_PROXY",
+                  "rmTypeName" : "ITEM_TREE",
+                  "occurrences" : "1..1",
+                  "targetPath" : "/data[at0001]/events[at0006]/data[at0003]"
+                } ]
+              }, {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "state",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT_PROXY",
+                  "rmTypeName" : "ITEM_TREE",
+                  "occurrences" : "1..1",
+                  "targetPath" : "/data[at0001]/events[at0006]/state[at0007]"
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "multiple" : false,
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0011",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "multiple" : true,
+            "cardinality" : {
+              "@type" : "CARDINALITY",
+              "interval" : "0..*",
+              "ordered" : false,
+              "unique" : false
+            },
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0013.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "multiple" : false,
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "occurrences" : "1..1",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "existence" : "1..1",
+                    "multiple" : false,
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.2" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..0",
+              "nodeId" : "at1033.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Blood Pressure",
+            "description" : "The local measurement of arterial blood pressure which is a surrogate for arterial pressure in the systemic circulation.  Most commonly, use of the term 'blood pressure' refers to measurement of brachial artery pressure in the upper arm."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Confounding factors",
+            "description" : "Comment on and record other incidental factors that may be contributing to the blood pressure measurement.  For example, level of anxiety or 'white coat syndrome'; pain or fever; changes in atmospheric pressure etc."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Sleep status",
+            "description" : "Sleep status - supports interpretation of 24 hour ambulatory blood pressure records."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "Tilt",
+            "description" : "The craniocaudal tilt of the surface on which the person is lying at the time of measurement.",
+            "comment" : "PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit."
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24 hour average",
+            "description" : "Estimate of the average blood pressure over a 24 hour period."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Cuff size",
+            "description" : "The size of the cuff used for blood pressure measurement.",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470. "
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "Location",
+            "description" : "Body location where blood pressure is measured.",
+            "comment" : "Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated."
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "Comment",
+            "description" : "Additional narrative about the measurement, not captured in other fields."
+          }
+        },
+        "ja" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "血圧",
+            "description" : "全身に循環する動脈圧を示すものとして，局所で測定される血圧。一般的には「血圧」とは上腕で上腕動脈を測定したものをさすことが多い。"
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "交絡因子",
+            "description" : "血圧測定に寄与しうるその他の偶発的な要素についてのコメント。たとえば、不安の程度や「白衣性高血圧」、痛みや怒り、大気圧の変化など。"
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "睡眠状況",
+            "description" : "睡眠状況 24時間外来血圧記録の解釈を助けるため"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24時間平均",
+            "description" : "24時間にわたる推定平均血圧"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "カフサイズ",
+            "description" : "血圧測定のために使われるカフの大きさ.",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Blutdruck",
+            "description" : "Die lokale Messung des arteriellen Blutdrucks als Surrogat für den arteriellen Druck in der systemischen Zirkulation. Häufig wird der Ausdruck 'Blutdruck' zur Bezeichung der Messung des brachialen Ateriendrucks im Oberarm verwendet."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Einflussfaktoren",
+            "description" : "Kommentar und Aufzeichung anderer Faktoren die ggf. zu dem Ergebnis der Blutdruckmessung beitragen können. Die kann z.B. bei belastenden Situationen der Fall sein (z.B. sog. Weißkittelhypertonie, Schmerzen, Fieber, Änderungen im atmosphärischen Druck)."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Schlafzustand",
+            "description" : "Schlafzustand  - unterstützt die Auswertung von 24-stündigen ambulanten Aufzeichnungen des Blutdrucks."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24 Stunden Durchschnitt",
+            "description" : "Schätzung des durchschnittlichen Blutdrucks über eine 24-stündigen Zeitraum."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Manschettengröße",
+            "description" : "Die Größe der Manschette, die zur Blutdruckmessung benutzt wurde.",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "zh-cn" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "血压",
+            "description" : "代表体循环动脉压的动脉血压的局部测量。最为常见的情况就是，采用“血压”一词来表示上臂肱动脉血压的测量。"
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "干扰因素",
+            "description" : "旨在记录和说明可能影响血压测量结果的偶然因素。例如，焦虑/进展程度或“白大褂综合征（white coat syndrome）”、疼痛、发热、大气压变化等等。"
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "睡眠状态",
+            "description" : "睡眠状态 - 旨在支持对于24小时流动式/门诊血压记录的解释。"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "*24小时均值",
+            "description" : "24小时期间血压均值的估计"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "袖带尺寸",
+            "description" : "用于血压测量的袖带（臂带，袖套，臂围）的大小或者说尺寸。",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "nl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Bloeddruk",
+            "description" : "De lokale meting van de arteriële bloeddruk, welke surrogaat is voor de arteriële druk in de systemische circulatie. Meest gebruikelijk is dat de term 'bloeddruk'  refereert aan de meting van de bloeddruk van de arterie brachialis in de bovenarm."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Beïnvloedende factoren",
+            "description" : "Opmerking over en vastleggen van andere incidentele factoren die de bloeddrukmeting zouden kunnen beïnvloeden. Bijvoorbeeld, mate van angst, of 'witte jas syndroom'; pijn of koorts; veranderingen in atmosferische druk etc."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Slaap/waak toestand",
+            "description" : "Slaap/waak toestand, ondersteunt de interpretatie van de 24-uurs bloeddrukmeting."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24 uur gemiddelde",
+            "description" : "Inschatting van de gemiddelde bloeddruk over een periode van 24 uur"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Manchet grootte",
+            "description" : "De grootte van de manchet gebruikt bij de meting",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470. "
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "АД",
+            "description" : "Локальное измерение артериального давления, которое является суррогатом артериального давления в системном кровотоке. Как правило, термин относится к давления плечевой артерии на предплечье.\n"
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Стохастические факторы(ru)",
+            "description" : "Комментарий и записи других случайных факторов, которые могут способствовать измерению артериального давления. Например,\"боязнь белого халата\" или боль и жар, изменения атмосферного давления т.д."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Стадия сна(ru)",
+            "description" : "Стадия сна - для интерпретации записи амбулаторного измерения АД в течение 42 часов."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "Среднее за 24 часа",
+            "description" : "Оценка среднего АД за период в 24 часа."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Размер манжеты(ru)",
+            "description" : "Размер манжеты для измерения кровяного давления."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "فشار خون",
+            "description" : "اندازه گیری موضعی فشار خون وریدی، که جایگزینی برای فشار وریدی در گردش خون کلی است.\nمعمولا واژه \"فشار خون\" به اندازه گیری فشار ورید بازویی در روی بازو گفته می شود"
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "عوامل مبهم",
+            "description" : "نظردهی و ثبت سایر عوامل ضمنی که ممکن است به اندازه گیری فشار خون کمک کنند . به عنوان مثال سطح اضطراب یا \"سندرم روپوش سفید\"، درد یا تب ، تغییرات فشار جوی و غیره "
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "وضعیت خواب",
+            "description" : "وضعیت خواب- به تفسیر ثبتهای صورت گرفته از فشار خون در خانه در طول 24 ساعت کمک می کند "
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "میانگین 24 ساعته",
+            "description" : "برآورد میانگین فشار خون در دوره زمانی 24 ساعته"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "اندازه کاف",
+            "description" : "اندازه کاف استفاده شده برای اندازه گیری فشار خون"
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "ضغط الدم",
+            "description" : "قياس موضعي لضغط الدم الشرياني و الذي يحل محل الضغط الشرياني في الدورة الدموية الجهازية. \nو عادة ما يستخدم مصطلح \"ضغط الدم\" لللإشارة إلى قياس ضغط دم الشريان العضُدي في أعلى الذراع."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "العوامل المربكة",
+            "description" : "تعليق حول و تسجيل للعوامل الطارئة التي قد تسهم في قياس ضغط الدم. مثلا, مستوى القلق أو متلازمة البالطو الأبيض أو الألم أو الحمى أو التغييرات في الضغط الجوي,, إلى آخره"
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "حالة النوم",
+            "description" : "حالة النوم - تدعم تفسير قياسات ضغط الدم المِسيارية خلال 24 ساعة"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "المتوسط خلال 24 ساعة",
+            "description" : "تقدير متوسط ضغط الدم خلال فترة من 24 ساعة"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "حجم الكُفَّة",
+            "description" : "حجم الكُفَّة المستخدمة في قياس ضغط الدم",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470. "
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Presión Arterial",
+            "description" : "La medición local de la tensión arterial que deriva de la medida de la presión arterial en la circulación sistémica. Comúnmente el uso de 'presión arterial' se refiere a la medida de la presión de la arteria braquial por encima del pliegue del codo."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Factores confluentes",
+            "description" : "Comentario y registro sobre otros factores que pueden incidir sobre la medición de la presión arterial. Por ejemplo: nivel de ansiedad o \"síndrome del guardapolvo blanco\"; dolor o fiebre; cambios en la presión atmosférica etc."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Estado del sueño",
+            "description" : "Estado del sueño - soporta la interpretación de los registros de presión arterial ambulatorios de 24 horas"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "Promedio de 24 horas",
+            "description" : "Estimativo de la media de la presión arterial sobre un período de 24 horas"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Tamaño del manguito",
+            "description" : "El tamaño del manguito usado para la toma de la presión arterial",
+            "comment" : "Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Presión arterial humana determinado por esfingomanómetro. Circulation 1993;88;2460-2470."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Pressão Arterial",
+            "description" : "A medida local da pressão sanguínea arterial, a qual é uma substituta da pressão arterial na circulação arterial sistêmica. Mais comumente o uso do termo pressão arterial se refere à medida da pressão da artéria braquial no antebraço."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Fatores confundidores",
+            "description" : "Comentários sobre e registros de outros fatores incidentais que possam estar contribuindo na medida da pressão sanguínea. Por exemplo, nível de ansiedade ou \"síndrome do jaleco branco\"; dor ou febre; mudanças na pressão atmosférica, etc."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Status do sono",
+            "description" : "Status do sono - apóia a interpretação do registro do mapa de pressão arterial (ambulatorial de 24 horas)."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "Media de 24 horas",
+            "description" : "Estimativa da pressão arterial média em um período de 24 horas."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Tamanho da braçadeira",
+            "description" : "Tamanho da braçadeira  usada para medir a pressão arterial.",
+            "comment" : "Sem  comentários"
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "ko" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "혈압",
+            "description" : "체순환에서 동맥압을 대신하는 동맥혈압의 국소 측정. 보통은 '혈압'이라는 용어의 사용은 상완에서 상완동맥의 측정을 의미함."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "혼란변수",
+            "description" : "혈압측정에 영향을 줄 수 있는 기타 우연한 변수들에 대한 코멘트와 기록. 예를 들어, 불안 또는 '백의신드롬'의 레벨; 통증 또는 발열; 대기압의 변화 등."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "수면 상태",
+            "description" : "수면 상태 - 24시간 활동 혈압기록에 대한 해석 지원."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24시간 평균",
+            "description" : "24시간 동안의 평균 혈압의 추정."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Cuff 크기",
+            "description" : "혈압 측정을 위해 사용되는 cuff의 크기."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Presión arterial",
+            "description" : "Medida de la presión arterial"
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Factores de confusión",
+            "description" : "Registro de factores que pueden afectar la medida"
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Estado de sueño",
+            "description" : "Soporta la interpretación de los registros de presión arterial ambulatoria de 24 horas"
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "*Tilt(en)",
+            "description" : "*The craniocaudal tilt of the surface on which the person is lying at the time of measurement.(en)",
+            "comment" : "*PLEASE NOTE: '°' is a valid UCUM unit. Please use 'deg' as the correct unit.(en)"
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "promedio en 24 horas",
+            "description" : "Estimación de la presión arterial promedio dentro de las 24 horas"
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Tamaño del manguito",
+            "description" : "Tamaño del manguito utilizado para medir la presión",
+            "comment" : "*Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470. (en)"
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)",
+            "comment" : "*Use 'Location of measurement' to select from a value set of common sites or free text choice.  Use SLOT for 'Structured measurement location' to record unusual sites, such as intra-arterial catheter sites. 'Specific location' has been deprecated.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Blodtrykk",
+            "description" : "Måling av blodtrykket som uttrykk for det arterielle blodtrykk i det systemiske kretsløp."
+          },
+          "at1052.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1052.1",
+            "text" : "Konfunderende faktorer",
+            "description" : "Kommentar til og registrering av andre faktorer som kan påvirke blodtrykksmålingen. For eksempel angst eller \"hvit frakk syndrom\", smerter eller feber, endringer i atmosfærisk trykk osv."
+          },
+          "at1043.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1043.1",
+            "text" : "Søvnstatus",
+            "description" : "Søvnstatus - understøtter tolkning av 24 timers ambulant blodtrykksmåling."
+          },
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : null
+          },
+          "at1005.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1005.1",
+            "text" : "Tilt",
+            "description" : "Kranio-caudal tilt på tidspunkt for blodtrykksmåling."
+          },
+          "at1042.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1042.1",
+            "text" : "24-timers gjennomsnitt",
+            "description" : "Estimert gjennomsnittsblodtrykk over en 24-timers periode."
+          },
+          "at0013.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0013.1",
+            "text" : "Mansjettstørrelse",
+            "description" : "Størrelse på blodtrykkmansjetten som anvendes til måling av blodtrykket. (Cuffstørrelse)."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : null
+          },
+          "at1033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at1033.1",
+            "text" : "*Location(en)",
+            "description" : "*Body location where blood pressure is measured.(en)"
+          },
+          "at0033.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0033.1",
+            "text" : "*Comment(en)",
+            "description" : "*Additional narrative about the measurement, not captured in other fields.(en)"
+          }
+        }
+      },
+      "termBindings" : {
+        "SNOMED-CT" : {
+          "at0000.1" : "term:SNOMED-CT(2003)::163020007",
+          "at0013.1" : "term:SNOMED-CT(2003)::246153002"
+        }
+      },
+      "terminologyExtracts" : { },
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at1044", "at1045" ]
+        },
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0015", "at0016", "at0017", "at1008", "at1009", "at1018", "at1019" ]
+        }
+      }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sebastian Garde, Jasmin Buck",
+        "organisation" : "Ocean Informatics, University of Heidelberg"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Igor Lizunov",
+        "email" : "i.lizunov@infinnity.ru"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Heather Leslie (from a Norwegian archetype)",
+        "organisation" : "Ocean Informatics, Australia and Nasjonal IKT, Norway",
+        "email" : "heather.leslie@oceaninformatics.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ko"
+      },
+      "author" : {
+        "name" : "Seung-Jong Yu",
+        "organisation" : "NOUSCO Co.,Ltd.",
+        "email" : "seungjong.yu@gmail.com"
+      },
+      "accreditation" : "Certified Board of Family Medicine in South Korea",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "Universidad de Morón",
+        "email" : "domingo_liotta@hotmail.com"
+      },
+      "accreditation" : "Universidad de Morón",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Jussara Rözsch",
+        "organisation" : "OpenEHR  Foundation",
+        "email" : "jussara.macedo@gmail.com"
+      },
+      "accreditation" : "Medical Doctor, Psychiarist, Clinical Modeller, openEHR Diretor, ehealth infostructuture WG ccoordinator- brazilian  ehealth program",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ja"
+      },
+      "author" : {
+        "name" : "Shinji Kobayashi",
+        "organisation" : "Kyoto University",
+        "email" : "skoba@moss.gr.jp"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics",
+        "email" : "shahla.foozonkhah@oceaninformatics.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Chunlan Ma; Lin Zhang",
+        "organisation" : "Ocean Informatics; BIPH",
+        "email" : "chunlan.ma@oceaninformatics.com; linforest@163.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Pablo Pazos",
+        "organisation" : "CaboLabs"
+      },
+      "accreditation" : "Computer Engineer",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Marja Buur",
+        "organisation" : "M.C.A.",
+        "email" : "m.buur-krom@mca.nl"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.body_temperature.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-body_temperature-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Body temperature",
+            "description" : "A measurement of the body temperature, which is a surrogate for the whole body temperature of the person."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Körpertemperatur",
+            "description" : "Eine Messung der Körpertemperatur an einer bestimmten Stelle als Surrogat für den gesamten Körper der Person."
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "O valor para a temperatura corporal, com valor médio equivalente para o corpo inteiro."
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Температура тела",
+            "description" : "Измерение температуры тела, которая является суррогатом температуры тела человека в целом."
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "La medición de la temperatura corporal, que deriva en la temperatura de todo el cuerpo de una persona."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Kroppstemperatur",
+            "description" : "Måling av kroppstemperatur som skal gjenspeile den faktiske kroppstemperaturen"
+          }
+        },
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "درجة حرارة الجسم",
+            "description" : "قياس لدرجة حرارة الجسم, و التي تحل كبديل لدرجة الحرارة الكلية لجسم الشخص"
+          }
+        },
+        "fa" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "دمای بدن",
+            "description" : "اندازه گیری دمای بدن که جایگزینی برای دمای کل بدن فرد است"
+          }
+        },
+        "es" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Temperatura Corporal",
+            "description" : "La medición de la temperatura corporal, que deriva en la temperatura de todo el cuerpo de una persona."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "rmName" : "openehr",
+    "rmRelease" : "1.0.2",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sebastian Garde",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Igor Lizunov",
+        "email" : "i.lizunov@infinnity.ru"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Jostein Ven",
+        "organisation" : "KITH",
+        "email" : "jostein.ven@kith.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "University of Morón"
+      },
+      "accreditation" : "University of Morón",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Marco Borges",
+        "organisation" : "P2D",
+        "email" : "marco.borges@p2d.com.br"
+      },
+      "accreditation" : "P2D Health Advisor Council",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fa"
+      },
+      "author" : {
+        "name" : "Shahla Foozonkhah",
+        "organisation" : "Ocean Informatics"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Domingo Liotta",
+        "organisation" : "University of Morón"
+      },
+      "accreditation" : "University of Morón",
+      "otherDetails" : { }
+    } ]
+  } ],
+  "templateId" : "Demo_vitals",
+  "originalLanguage" : {
+    "terminologyId" : {
+      "value" : "ISO_639-1"
+    },
+    "codeString" : "en"
+  },
+  "translations" : [ {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ko"
+    },
+    "author" : {
+      "name" : "Seung-Jong Yu",
+      "organisation" : "NOUSCO Co.,Ltd.",
+      "email" : "seungjong.yu@gmail.com"
+    },
+    "accreditation" : "Certified Board of Family Medicine in South Korea",
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es-ar"
+    },
+    "author" : {
+      "name" : "Edgardo Vazquez",
+      "organisation" : "VinculoMedico"
+    },
+    "accreditation" : "Medical Doctor",
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "pt-br"
+    },
+    "author" : {
+      "name" : "Vladimir Pizzo",
+      "organisation" : "Hospital Sirio Libanes, Brazil",
+      "email" : "vladimir.pizzo@hsl.org.br"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "ar-sy"
+    },
+    "author" : {
+      "name" : "Mona Saleh"
+    },
+    "otherDetails" : { }
+  }, {
+    "@type" : "TRANSLATION_DETAILS",
+    "language" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "es"
+    },
+    "author" : {
+      "name" : "Pablo Pazos",
+      "organisation" : "CaboLabs"
+    },
+    "accreditation" : "Computer Engineer",
+    "otherDetails" : { }
+  } ]
+}

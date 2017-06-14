@@ -1,0 +1,72 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-INSTRUCTION.test.v0
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+    >
+    lifecycle_state = <"unmanaged">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    INSTRUCTION[at0000] matches {
+        protocol existence matches {0..1} matches {*}
+        activities existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ACTIVITY[at0001] occurrences matches {0..1} matches {
+                description matches {
+                    ITEM_TREE[at0002] occurrences matches {0..1} matches {
+                        items existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            ELEMENT[at0003] occurrences matches {0..1} matches {
+                                value existence matches {0..1} matches {
+                                    DV_CODED_TEXT occurrences matches {0..1} matches {*}
+                                }
+                            }
+                            ELEMENT[at0004] occurrences matches {0..1} matches {
+                                value existence matches {0..1} matches {
+                                    DV_TEXT occurrences matches {0..1} matches {*}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"en", ...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"test">
+                    description = <"testa">
+
+                >
+                ["at0001"] = <
+                    text = <"prediagnose">
+                    description = <"aa">
+
+                >
+                ["at0003"] = <
+                    text = <"name">
+                    description = <"a">
+
+                >
+                ["at0004"] = <
+                    text = <"namne2">
+                    description = <"a">
+
+                >
+            >
+        >
+    >

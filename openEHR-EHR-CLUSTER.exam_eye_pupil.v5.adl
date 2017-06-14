@@ -1,0 +1,993 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.exam_eye_pupil.v5
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            author = <
+                ["name"] = <"Kalle Vuorinen">
+                ["organisation"] = <"Tieto Healthcare & Welfare Oy">
+                ["email"] = <"kalle.vuorinen@tieto.com">
+            >
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            author = <
+                ["name"] = <"Harriet Haglund">
+                ["organisation"] = <"Tieto Healthcare & Welfare Oy">
+                ["email"] = <"harriet.haglund@tieto.com">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["date"] = <"2015-07-09">
+        ["name"] = <"Heather Leslie">
+        ["organisation"] = <"Ocean Informatics">
+        ["email"] = <"heather.leslie@oceaninformatics.com">
+    >
+    lifecycle_state = <"NotSet">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"For recording a narrative description and clinical interpretation of the findings observed during the physical examination of a single pupil at a time.">
+            keywords = <"eye","pupil">
+            copyright = <"© openEHR Foundation">
+            use = <"Use to record a narrative description of the overall findings observed during the physical examination of a pupil. This initial draft archetype consists only of the core examination pattern data elements (as per CLUSTER.exam_pattern) and will likely be expanded further over time as specific clinical requirements are identified.
+
+This archetype has been specifically designed to be used in the 'Examination findings' SLOT within the CLUSTER.exam_eye archetype, but can also be used within the OBSERVATION.exam and other OBSERVATION or CLUSTER archetypes, where clinically appropriate - for example, CLUSTER.exam_cranial_nerves.
+
+Use to provide a framework in which CLUSTER archetypes can be nested in the 'Examination findings' SLOT to record additional structured physical examination findings. 
+
+The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.">
+            misuse = <"Not to be used for recording data related to comparison between both pupils - use CLUSTER.exam_eyes for this purpose.
+
+Not to be used to record findings of the physical examination of other parts of the eye - use specific purpose-built CLUSTER archetypes for this purpose. For example, CLUSTER.exam_retina.
+
+Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
+
+Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.">
+        >
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            purpose = <"*For recording a narrative description and clinical interpretation of the findings observed during the physical examination of a single pupil at a time.(en)">
+            keywords = <"*eye(en)","*pupil(en)">
+            copyright = <"*© openEHR Foundation(en)">
+            use = <"*Use to record a narrative description of the overall findings observed during the physical examination of a pupil. This initial draft archetype consists only of the core examination pattern data elements (as per CLUSTER.exam_pattern) and will likely be expanded further over time as specific clinical requirements are identified.
+
+This archetype has been specifically designed to be used in the 'Examination findings' SLOT within the CLUSTER.exam_eye archetype, but can also be used within the OBSERVATION.exam and other OBSERVATION or CLUSTER archetypes, where clinically appropriate - for example, CLUSTER.exam_cranial_nerves.
+
+Use to provide a framework in which CLUSTER archetypes can be nested in the 'Examination findings' SLOT to record additional structured physical examination findings. 
+
+The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.(en)">
+            misuse = <"*Not to be used for recording data related to comparison between both pupils - use CLUSTER.exam_eyes for this purpose.
+
+Not to be used to record findings of the physical examination of other parts of the eye - use specific purpose-built CLUSTER archetypes for this purpose. For example, CLUSTER.exam_retina.
+
+Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
+
+Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.(en)">
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            purpose = <"*For recording a narrative description and clinical interpretation of the findings observed during the physical examination of a single pupil at a time.(en)">
+            keywords = <"*eye(en)","*pupil(en)">
+            copyright = <"*© openEHR Foundation(en)">
+            use = <"*Use to record a narrative description of the overall findings observed during the physical examination of a pupil. This initial draft archetype consists only of the core examination pattern data elements (as per CLUSTER.exam_pattern) and will likely be expanded further over time as specific clinical requirements are identified.
+
+This archetype has been specifically designed to be used in the 'Examination findings' SLOT within the CLUSTER.exam_eye archetype, but can also be used within the OBSERVATION.exam and other OBSERVATION or CLUSTER archetypes, where clinically appropriate - for example, CLUSTER.exam_cranial_nerves.
+
+Use to provide a framework in which CLUSTER archetypes can be nested in the 'Examination findings' SLOT to record additional structured physical examination findings. 
+
+The CLUSTER.exclusion_exam archetype can be nested within the 'Examination not done' SLOT to optionally record explicit details about the examination not being performed.
+
+Use to incorporate the narrative descriptions of clinical findings within existing or legacy clinical systems into an archetyped format, using the 'Clinical Description' data element.(en)">
+            misuse = <"*Not to be used for recording data related to comparison between both pupils - use CLUSTER.exam_eyes for this purpose.
+
+Not to be used to record findings of the physical examination of other parts of the eye - use specific purpose-built CLUSTER archetypes for this purpose. For example, CLUSTER.exam_retina.
+
+Not to be used for recording the clinical history - use specific OBSERVATION and CLUSTER archetypes. For example OBSERVATION.story and CLUSTER.symptom.
+
+Not to be used to record stand-alone clinical observations or measurements or test results - use specific OBSERVATION archetypes. For example OBSERVATION.blood_pressure or OBSERVATION.imaging_exam.(en)">
+        >
+    >
+
+definition
+    CLUSTER[at0000] matches {
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0009,
+                            at0010]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {
+                value matches {
+                    DV_BOOLEAN matches {
+                        value matches {true}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0012,
+                            at0013,
+                            at0014,
+                            at0015,
+                            at0016,
+                            at0017]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0018] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0019,
+                            at0020,
+                            at0021,
+                            at0022]
+                        }
+                    }
+                    C_DV_QUANTITY <
+                        property = <[openehr::122]>
+                        list = <
+                            ["1"] = <
+                                units = <"mm">
+                                magnitude = <|0.0..30.0|>
+                                precision = <|0|>
+                            >
+                        >
+                    >
+                }
+            }
+            ELEMENT[at0023] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0024,
+                            at0025,
+                            at0026]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0027] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0028,
+                            at0029,
+                            at0030,
+                            at0031]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0032] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0033,
+                            at0034,
+                            at0035]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0036] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0028,
+                            at0029,
+                            at0030]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0037] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0038,
+                            at0039,
+                            at0040]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0041] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0028,
+                            at0029,
+                            at0030]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0042] occurrences matches {0..1} matches {
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at0043,
+                            at0044]
+                        }
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+            allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
+            }
+            ELEMENT[at0006] occurrences matches {0..*} matches {
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+            ELEMENT[at0007] occurrences matches {0..1} matches {
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"en", "fi", "sv", ...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Examination of a pupil">
+                    description = <"Findings observed during the physical examination of a pupil.">
+
+                >
+                ["at0001"] = <
+                    text = <"Eye examined">
+                    description = <"Identification of the eye under examination.">
+                    comment = <"If the side of eye being examined has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.">
+
+                >
+                ["at0002"] = <
+                    text = <"No abnormality detected">
+                    description = <"Statement that no abnormality was detected (NAD) on physical examination.">
+                    comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element.">
+
+                >
+                ["at0003"] = <
+                    text = <"Clinical description">
+                    description = <"Narrative description of the overall findings observed during the physical examination.">
+
+                >
+                ["at0004"] = <
+                    text = <"Examination findings">
+                    description = <"Structured details about the  physical examination findings.">
+
+                >
+                ["at0005"] = <
+                    text = <"Multimedia representation">
+                    description = <"Digital image, video or diagram representing the physical examination findings.">
+
+                >
+                ["at0006"] = <
+                    text = <"Clinical interpretation">
+                    description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.">
+
+                >
+                ["at0007"] = <
+                    text = <"Comment">
+                    description = <"Additional narrative about the physical examination findings, not captured in other fields.">
+
+                >
+                ["at0008"] = <
+                    text = <"Examination not done">
+                    description = <"Details to explicitly record that this examination was not performed.">
+
+                >
+                ["at0009"] = <
+                    text = <"Left">
+                    description = <"The left eye was examined.">
+
+                >
+                ["at0010"] = <
+                    text = <"Right">
+                    description = <"The right eye was examined.">
+
+                >
+                ["at0011"] = <
+                    text = <"Shape">
+                    description = <"Description of the shape of the pupil.">
+
+                >
+                ["at0012"] = <
+                    text = <"Circular">
+                    description = <"The pupil is a normal, circular shape.">
+
+                >
+                ["at0013"] = <
+                    text = <"Oval">
+                    description = <"The pupil is an oval shape.">
+
+                >
+                ["at0014"] = <
+                    text = <"Irregular">
+                    description = <"The pupil is an irregular shape.">
+
+                >
+                ["at0015"] = <
+                    text = <"Sectoral abnormality">
+                    description = <"The pupil has a sectoral abnormality.">
+
+                >
+                ["at0016"] = <
+                    text = <"Teardrop">
+                    description = <"The pupil is a teardrop shape.">
+
+                >
+                ["at0017"] = <
+                    text = <"Keyhole">
+                    description = <"The pupil is a keyhole shape.">
+
+                >
+                ["at0018"] = <
+                    text = <"Size">
+                    description = <"The size of the pupil.">
+
+                >
+                ["at0019"] = <
+                    text = <"Pinpoint">
+                    description = <"The pupil is heavily constricted (<= 1mm).">
+
+                >
+                ["at0020"] = <
+                    text = <"Constricted">
+                    description = <"The pupil is constricted, relative to normal (1.5 - 2.5mm).">
+
+                >
+                ["at0021"] = <
+                    text = <"Normal">
+                    description = <"The pupil size is normal (3 - 5mm).">
+
+                >
+                ["at0022"] = <
+                    text = <"Dilated">
+                    description = <"The pupil is dilated, relative to normal (>= 5.5mm).">
+
+                >
+                ["at0023"] = <
+                    text = <"Direct Reflex (DLR)">
+                    description = <"Reflex constriction of the identified pupil when light is shone into the same eye.">
+
+                >
+                ["at0024"] = <
+                    text = <"Present">
+                    description = <"The direct light reflex is present.">
+
+                >
+                ["at0025"] = <
+                    text = <"Indeterminate">
+                    description = <"The presence or absence of the direct light reflex could not be determined.">
+
+                >
+                ["at0026"] = <
+                    text = <"Absent">
+                    description = <"The direct light reflex is absent.">
+
+                >
+                ["at0027"] = <
+                    text = <"Speed of DLR">
+                    description = <"Subjective estimate of the reactivity of the direct light reflex on stimulus by a light.">
+
+                >
+                ["at0028"] = <
+                    text = <"Sluggish/slow (-)">
+                    description = <"The reflex is observed to be slow or sluggish, compared to normal.">
+
+                >
+                ["at0029"] = <
+                    text = <"Normal speed (+/-)">
+                    description = <"The reflex is observed to be at or about normal speed.">
+
+                >
+                ["at0030"] = <
+                    text = <"Brisk(+)">
+                    description = <"The reflex is observed to be brisk, compared to normal.">
+
+                >
+                ["at0031"] = <
+                    text = <"Very brisk (++)">
+                    description = <"The reflex is observed to be very brisk (++).">
+
+                >
+                ["at0032"] = <
+                    text = <"Consensual Reflex (CLR)">
+                    description = <"Reflex constriction of the other pupil when light is shone into the identified eye.">
+
+                >
+                ["at0033"] = <
+                    text = <"Present">
+                    description = <"The consensual light reflex is present.">
+
+                >
+                ["at0034"] = <
+                    text = <"Indeterminate">
+                    description = <"The presence or absence of the consensual light reflex could not be determined.">
+
+                >
+                ["at0035"] = <
+                    text = <"Absent">
+                    description = <"The consensual light reflex is absent.">
+
+                >
+                ["at0036"] = <
+                    text = <"Speed of CLR">
+                    description = <"Subjective estimate of the reactivity of the consensual light reflex on stimulus by a light.">
+
+                >
+                ["at0037"] = <
+                    text = <"Accommodation Reflex (AR)">
+                    description = <"Reflex constriction of the pupil, in response to changing focusing on a near  or far objects.">
+
+                >
+                ["at0038"] = <
+                    text = <"Present">
+                    description = <"The accomodation reflex is present.">
+
+                >
+                ["at0039"] = <
+                    text = <"Indeterminate">
+                    description = <"The presence or absence of the accomodation reflex could not be determined.">
+
+                >
+                ["at0040"] = <
+                    text = <"Absent">
+                    description = <"The accommodation reflex is absent.">
+
+                >
+                ["at0041"] = <
+                    text = <"Speed of AR">
+                    description = <"Subjective estimate of the reactivity of the accodation light reflex on stimulus by a light.">
+
+                >
+                ["at0042"] = <
+                    text = <"Relative Afferent Pupillary Defect">
+                    description = <"Finding where the pupils constrict less (therefore appearing to dilate) when a bright light is swung from the unaffected eye to the affected eye.">
+
+                >
+                ["at0043"] = <
+                    text = <"Present">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is present.">
+
+                >
+                ["at0044"] = <
+                    text = <"Absent">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is absent.">
+
+                >
+                ["at0045"] = <
+                    text = <"Length">
+
+                >
+            >
+        >
+        ["fi"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pupilin tutkimus">
+                    description = <"Findings observed during the physical examination of a pupil.(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Silmän valinta">
+                    description = <"Identification of the eye under examination.(en)">
+                    comment = <"*If the side of eye being examined has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Ei poikkeavuuksia">
+                    description = <"Statement that no abnormality was detected (NAD) on physical examination.(en)">
+                    comment = <"*Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element.(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Kliininen kuvaus">
+                    description = <"Narrative description of the overall findings observed during the physical examination.(en)">
+
+                >
+                ["at0004"] = <
+                    text = <"Tutkimuslöydökset">
+                    description = <"Structured details about the  physical examination findings.(en)">
+
+                >
+                ["at0005"] = <
+                    text = <"Multimedia esitys">
+                    description = <"Digital image, video or diagram representing the physical examination findings.(en)">
+
+                >
+                ["at0006"] = <
+                    text = <"Kliininen tulkinta">
+                    description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.(en)">
+
+                >
+                ["at0007"] = <
+                    text = <"Kommentti">
+                    description = <"Additional narrative about the physical examination findings, not captured in other fields.(en)">
+
+                >
+                ["at0008"] = <
+                    text = <"Tutkimusta ei suoritettu">
+                    description = <"Details to explicitly record that this examination was not performed.(en)">
+
+                >
+                ["at0009"] = <
+                    text = <"Vasen">
+                    description = <"The left eye was examined.(en)">
+
+                >
+                ["at0010"] = <
+                    text = <"Oikea">
+                    description = <"The right eye was examined.(en)">
+
+                >
+                ["at0011"] = <
+                    text = <"Muoto">
+                    description = <"Description of the shape of the pupil.(en)">
+
+                >
+                ["at0012"] = <
+                    text = <"Pyöreä">
+                    description = <"The pupil is a normal, circular shape.(en)">
+
+                >
+                ["at0013"] = <
+                    text = <"Ovaali">
+                    description = <"The pupil is an oval shape.(en)">
+
+                >
+                ["at0014"] = <
+                    text = <"Epäsäännöllinen">
+                    description = <"The pupil is an irregular shape.(en)">
+
+                >
+                ["at0015"] = <
+                    text = <"Sektoraalinen poikkeavuus">
+                    description = <"The pupil has a sectoral abnormality.(en)">
+
+                >
+                ["at0016"] = <
+                    text = <"Kyynel">
+                    description = <"The pupil is a teardrop shape.(en)">
+
+                >
+                ["at0017"] = <
+                    text = <"Avaimenreikä">
+                    description = <"The pupil is a keyhole shape.(en)">
+
+                >
+                ["at0018"] = <
+                    text = <"Koko">
+                    description = <"The size of the pupil.(en)">
+
+                >
+                ["at0019"] = <
+                    text = <"Supistunut">
+                    description = <"The pupil is heavily constricted (<= 1mm).(en)">
+
+                >
+                ["at0020"] = <
+                    text = <"Hieman supistunut">
+                    description = <"The pupil is constricted, relative to normal (1.5 - 2.5mm).(en)">
+
+                >
+                ["at0021"] = <
+                    text = <"Normaali">
+                    description = <"The pupil size is normal (3 - 5mm).(en)">
+
+                >
+                ["at0022"] = <
+                    text = <"Laajentunut">
+                    description = <"The pupil is dilated, relative to normal (>= 5.5mm).(en)">
+
+                >
+                ["at0023"] = <
+                    text = <"Suora refleksi (DLR)">
+                    description = <"Reflex constriction of the identified pupil when light is shone into the same eye.(en)">
+
+                >
+                ["at0024"] = <
+                    text = <"Läsnä">
+                    description = <"The direct light reflex is present.(en)">
+
+                >
+                ["at0025"] = <
+                    text = <"Epämääräinen">
+                    description = <"The presence or absence of the direct light reflex could not be determined.(en)">
+
+                >
+                ["at0026"] = <
+                    text = <"Poissaoleva">
+                    description = <"The direct light reflex is absent.(en)">
+
+                >
+                ["at0027"] = <
+                    text = <"DLR nopeus">
+                    description = <"Subjective estimate of the reactivity of the direct light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0028"] = <
+                    text = <"Hidas (-)">
+                    description = <"The reflex is observed to be slow or sluggish, compared to normal.(en)">
+
+                >
+                ["at0029"] = <
+                    text = <"Normaali (+/-)">
+                    description = <"The reflex is observed to be at or about normal speed.(en)">
+
+                >
+                ["at0030"] = <
+                    text = <"Vauhdikas (+)">
+                    description = <"The reflex is observed to be brisk, compared to normal.(en)">
+
+                >
+                ["at0031"] = <
+                    text = <"Todella vauhdikas (++)">
+                    description = <"The reflex is observed to be very brisk (++).(en)">
+
+                >
+                ["at0032"] = <
+                    text = <"Yhteinen refleksi (CLR)">
+                    description = <"Reflex constriction of the other pupil when light is shone into the identified eye.(en)">
+
+                >
+                ["at0033"] = <
+                    text = <"Läsnä">
+                    description = <"The consensual light reflex is present.(en)">
+
+                >
+                ["at0034"] = <
+                    text = <"Epämääräinen">
+                    description = <"The presence or absence of the consensual light reflex could not be determined.(en)">
+
+                >
+                ["at0035"] = <
+                    text = <"Poissaoleva">
+                    description = <"The consensual light reflex is absent.(en)">
+
+                >
+                ["at0036"] = <
+                    text = <"DLR nopeus">
+                    description = <"Subjective estimate of the reactivity of the consensual light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0037"] = <
+                    text = <"Soveltuva refleksi (AR)">
+                    description = <"Reflex constriction of the pupil, in response to changing focusing on a near  or far objects.(en)">
+
+                >
+                ["at0038"] = <
+                    text = <"Läsnä">
+                    description = <"The accomodation reflex is present.(en)">
+
+                >
+                ["at0039"] = <
+                    text = <"Epämääräinen">
+                    description = <"The presence or absence of the accomodation reflex could not be determined.(en)">
+
+                >
+                ["at0040"] = <
+                    text = <"Poissaoleva">
+                    description = <"The accommodation reflex is absent.(en)">
+
+                >
+                ["at0041"] = <
+                    text = <"DLR nopeus">
+                    description = <"Subjective estimate of the reactivity of the accodation light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0042"] = <
+                    text = <"Relative Afferent Pupillary Defect (RAPD)">
+                    description = <"Finding where the pupils constrict less (therefore appearing to dilate) when a bright light is swung from the unaffected eye to the affected eye.(en)">
+
+                >
+                ["at0043"] = <
+                    text = <"Läsnä">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is present.(en)">
+
+                >
+                ["at0044"] = <
+                    text = <"Poissaoleva">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is absent.(en)">
+
+                >
+                ["at0045"] = <
+                    text = <"*Length(en)">
+
+                >
+            >
+        >
+        ["sv"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Undersökning pupill">
+                    description = <"Findings observed during the physical examination of a pupil.(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Undersökt öga">
+                    description = <"Identification of the eye under examination.(en)">
+                    comment = <"*If the side of eye being examined has previously been identified in another archetype in which this archetype is nested, this data element becomes redundant.(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Inget avvikande upptäckt">
+                    description = <"Statement that no abnormality was detected (NAD) on physical examination.(en)">
+                    comment = <"*Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element.(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Klinisk beskrivning">
+                    description = <"Narrative description of the overall findings observed during the physical examination.(en)">
+
+                >
+                ["at0004"] = <
+                    text = <"Upptäckter vid undersökning">
+                    description = <"Structured details about the  physical examination findings.(en)">
+
+                >
+                ["at0005"] = <
+                    text = <"Multimediavisning">
+                    description = <"Digital image, video or diagram representing the physical examination findings.(en)">
+
+                >
+                ["at0006"] = <
+                    text = <"Klinisk tolkning">
+                    description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.(en)">
+
+                >
+                ["at0007"] = <
+                    text = <"Kommentar">
+                    description = <"Additional narrative about the physical examination findings, not captured in other fields.(en)">
+
+                >
+                ["at0008"] = <
+                    text = <"Undersökning ej utförd">
+                    description = <"Details to explicitly record that this examination was not performed.(en)">
+
+                >
+                ["at0009"] = <
+                    text = <"Vänster">
+                    description = <"The left eye was examined.(en)">
+
+                >
+                ["at0010"] = <
+                    text = <"Höger">
+                    description = <"The right eye was examined.(en)">
+
+                >
+                ["at0011"] = <
+                    text = <"Form">
+                    description = <"Description of the shape of the pupil.(en)">
+
+                >
+                ["at0012"] = <
+                    text = <"Cirkelformad">
+                    description = <"The pupil is a normal, circular shape.(en)">
+
+                >
+                ["at0013"] = <
+                    text = <"Oval">
+                    description = <"The pupil is an oval shape.(en)">
+
+                >
+                ["at0014"] = <
+                    text = <"Ojämn">
+                    description = <"The pupil is an irregular shape.(en)">
+
+                >
+                ["at0015"] = <
+                    text = <"Avvikande område">
+                    description = <"The pupil has a sectoral abnormality.(en)">
+
+                >
+                ["at0016"] = <
+                    text = <"Tår">
+                    description = <"The pupil is a teardrop shape.(en)">
+
+                >
+                ["at0017"] = <
+                    text = <"Nyckelhål">
+                    description = <"The pupil is a keyhole shape.(en)">
+
+                >
+                ["at0018"] = <
+                    text = <"Storlek">
+                    description = <"The size of the pupil.(en)">
+
+                >
+                ["at0019"] = <
+                    text = <"Exakt?">
+                    description = <"The pupil is heavily constricted (<= 1mm).(en)">
+
+                >
+                ["at0020"] = <
+                    text = <"Begränsad? ">
+                    description = <"The pupil is constricted, relative to normal (1.5 - 2.5mm).(en)">
+
+                >
+                ["at0021"] = <
+                    text = <"Normal">
+                    description = <"The pupil size is normal (3 - 5mm).(en)">
+
+                >
+                ["at0022"] = <
+                    text = <"Utvidgad">
+                    description = <"The pupil is dilated, relative to normal (>= 5.5mm).(en)">
+
+                >
+                ["at0023"] = <
+                    text = <"Direkt Reflex (DLR)">
+                    description = <"Reflex constriction of the identified pupil when light is shone into the same eye.(en)">
+
+                >
+                ["at0024"] = <
+                    text = <"Befintlig">
+                    description = <"The direct light reflex is present.(en)">
+
+                >
+                ["at0025"] = <
+                    text = <"Oviss">
+                    description = <"The presence or absence of the direct light reflex could not be determined.(en)">
+
+                >
+                ["at0026"] = <
+                    text = <"Obefintlig">
+                    description = <"The direct light reflex is absent.(en)">
+
+                >
+                ["at0027"] = <
+                    text = <"DLR hastighet">
+                    description = <"Subjective estimate of the reactivity of the direct light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0028"] = <
+                    text = <"Trög/långsam (-)">
+                    description = <"The reflex is observed to be slow or sluggish, compared to normal.(en)">
+
+                >
+                ["at0029"] = <
+                    text = <"Normal hastighet (+/-)">
+                    description = <"The reflex is observed to be at or about normal speed.(en)">
+
+                >
+                ["at0030"] = <
+                    text = <"Livlig (+)">
+                    description = <"The reflex is observed to be brisk, compared to normal.(en)">
+
+                >
+                ["at0031"] = <
+                    text = <"Väldigt livlig  (++)">
+                    description = <"The reflex is observed to be very brisk (++).(en)">
+
+                >
+                ["at0032"] = <
+                    text = <"Samstämmig (CLR)">
+                    description = <"Reflex constriction of the other pupil when light is shone into the identified eye.(en)">
+
+                >
+                ["at0033"] = <
+                    text = <"Befintlig">
+                    description = <"The consensual light reflex is present.(en)">
+
+                >
+                ["at0034"] = <
+                    text = <"Oviss">
+                    description = <"The presence or absence of the consensual light reflex could not be determined.(en)">
+
+                >
+                ["at0035"] = <
+                    text = <"Obefintlig">
+                    description = <"The consensual light reflex is absent.(en)">
+
+                >
+                ["at0036"] = <
+                    text = <"CLR hastighet">
+                    description = <"Subjective estimate of the reactivity of the consensual light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0037"] = <
+                    text = <"Fullbordad Reflex (AR)">
+                    description = <"Reflex constriction of the pupil, in response to changing focusing on a near  or far objects.(en)">
+
+                >
+                ["at0038"] = <
+                    text = <"Befintlig">
+                    description = <"The accomodation reflex is present.(en)">
+
+                >
+                ["at0039"] = <
+                    text = <"Oviss">
+                    description = <"The presence or absence of the accomodation reflex could not be determined.(en)">
+
+                >
+                ["at0040"] = <
+                    text = <"Obefintlig">
+                    description = <"The accommodation reflex is absent.(en)">
+
+                >
+                ["at0041"] = <
+                    text = <"AR hastighet">
+                    description = <"Subjective estimate of the reactivity of the accodation light reflex on stimulus by a light.(en)">
+
+                >
+                ["at0042"] = <
+                    text = <"Afferent pupilldefekt (RAPD)">
+                    description = <"Finding where the pupils constrict less (therefore appearing to dilate) when a bright light is swung from the unaffected eye to the affected eye.(en)">
+
+                >
+                ["at0043"] = <
+                    text = <"Befintlig">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is present.(en)">
+
+                >
+                ["at0044"] = <
+                    text = <"Obefintlig ">
+                    description = <"A relative afferent afferent pupillary defect (RAPD) is absent.(en)">
+
+                >
+                ["at0045"] = <
+                    text = <"*Length(en)">
+
+                >
+            >
+        >
+    >
+    term_binding = <
+        ["openehr"] = <
+            items = <
+                ["at0045"] = <[openehr::122]>
+            >
+        >
+    >

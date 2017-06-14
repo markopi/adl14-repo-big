@@ -1,0 +1,152 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.composition_state.v0
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+            purpose = <"*(en)">
+            copyright = <"*(en)">
+            use = <"*(en)">
+            misuse = <"*(en)">
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            purpose = <"*(en)">
+            copyright = <"*(en)">
+            use = <"*(en)">
+            misuse = <"*(en)">
+        >
+    >
+
+definition
+    CLUSTER[at0000] matches {
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] matches {
+                value matches {
+                    1|[local::at0002],
+                    2|[local::at0003],
+                    3|[local::at0004]
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"en", "fi", "sv", ...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Composition state">
+                    description = <"unknown">
+
+                >
+                ["at0001"] = <
+                    text = <"State">
+                    description = <"*">
+
+                >
+                ["at0002"] = <
+                    text = <"Draft">
+                    description = <"*">
+
+                >
+                ["at0003"] = <
+                    text = <"Ready">
+                    description = <"*">
+
+                >
+                ["at0004"] = <
+                    text = <"Approved">
+                    description = <"*">
+
+                >
+            >
+        >
+        ["fi"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Komposition tila">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Tila">
+                    description = <"**(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Luonnos">
+                    description = <"**(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Valmis">
+                    description = <"**(en)">
+
+                >
+                ["at0004"] = <
+                    text = <"Hyväksytty">
+                    description = <"**(en)">
+
+                >
+            >
+        >
+        ["sv"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Skapandeläge">
+                    description = <"*unknown(en)">
+
+                >
+                ["at0001"] = <
+                    text = <"Tillstånd">
+                    description = <"**(en)">
+
+                >
+                ["at0002"] = <
+                    text = <"Utkast">
+                    description = <"**(en)">
+
+                >
+                ["at0003"] = <
+                    text = <"Klar">
+                    description = <"**(en)">
+
+                >
+                ["at0004"] = <
+                    text = <"Godkänd">
+                    description = <"**(en)">
+
+                >
+            >
+        >
+    >

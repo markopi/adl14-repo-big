@@ -1,0 +1,74 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-SECTION.arrival_information.v0
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::fi]>
+    translations = <
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+        ["fi"] = <
+            language = <[ISO_639-1::fi]>
+        >
+        ["sv"] = <
+            language = <[ISO_639-1::sv]>
+        >
+    >
+
+definition
+    SECTION[at0000] matches {*}
+
+ontology
+    terminologies_available = <"fi", "en", "sv", ...>
+    term_definitions = <
+        ["fi"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Tulotiedot">
+                    description = <"*">
+
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Arrival information">
+                    description = <"*">
+
+                >
+            >
+        >
+        ["sv"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Ankomstinfo">
+                    description = <"*">
+
+                >
+            >
+        >
+    >
